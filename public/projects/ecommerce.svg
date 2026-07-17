@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f1a2e"/>
+      <stop offset="100%" stop-color="#1a0f2e"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1e2a4a"/>
+      <stop offset="100%" stop-color="#1e1a3a"/>
+    </linearGradient>
+    <linearGradient id="btn" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7b68ee"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="prod1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2d1b69"/>
+      <stop offset="100%" stop-color="#1e1a4a"/>
+    </linearGradient>
+    <linearGradient id="prod2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1b3a5c"/>
+      <stop offset="100%" stop-color="#1a2a4a"/>
+    </linearGradient>
+    <linearGradient id="prod3" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3a1b4a"/>
+      <stop offset="100%" stop-color="#2a1a3a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Left panel - product list -->
+  <rect x="0" y="0" width="310" height="450" fill="#0d1527"/>
+
+  <!-- Search bar -->
+  <rect x="16" y="16" width="278" height="36" rx="18" fill="#1e2a4a" stroke="#7b68ee" stroke-width="0.5" stroke-opacity="0.3"/>
+  <circle cx="36" cy="34" r="7" fill="none" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="41" y1="39" x2="46" y2="44" stroke="#64748b" stroke-width="1.5"/>
+  <rect x="56" y="30" width="120" height="8" rx="4" fill="#64748b" opacity="0.3"/>
+
+  <!-- Category chips -->
+  <rect x="16" y="62" width="60" height="22" rx="11" fill="#7b68ee"/>
+  <rect x="26" y="69" width="40" height="8" rx="4" fill="white" opacity="0.9"/>
+  <rect x="84" y="62" width="60" height="22" rx="11" fill="#1e2a4a"/>
+  <rect x="94" y="69" width="40" height="8" rx="4" fill="#64748b" opacity="0.5"/>
+  <rect x="152" y="62" width="70" height="22" rx="11" fill="#1e2a4a"/>
+  <rect x="162" y="69" width="50" height="8" rx="4" fill="#64748b" opacity="0.5"/>
+  <rect x="230" y="62" width="60" height="22" rx="11" fill="#1e2a4a"/>
+  <rect x="240" y="69" width="40" height="8" rx="4" fill="#64748b" opacity="0.5"/>
+
+  <!-- Product cards (vertical list) -->
+  <!-- Item 1 -->
+  <rect x="16" y="98" width="278" height="72" rx="12" fill="#1a2038" stroke="#7b68ee" stroke-width="0.5" stroke-opacity="0.4"/>
+  <rect x="28" y="110" width="48" height="48" rx="8" fill="url(#prod1)"/>
+  <circle cx="52" cy="134" r="14" fill="#7b68ee" opacity="0.4"/>
+  <circle cx="52" cy="134" r="7" fill="#7b68ee" opacity="0.8"/>
+  <rect x="88" y="112" width="100" height="7" rx="3.5" fill="#e2e8f0" opacity="0.8"/>
+  <rect x="88" y="124" width="70" height="5" rx="2.5" fill="#64748b" opacity="0.5"/>
+  <rect x="88" y="138" width="45" height="7" rx="3.5" fill="#7b68ee" opacity="0.9"/>
+  <rect x="236" y="118" width="46" height="22" rx="11" fill="#7b68ee" opacity="0.15"/>
+  <rect x="244" y="125" width="30" height="8" rx="4" fill="#7b68ee" opacity="0.8"/>
+  <circle cx="268" cy="153" r="4" fill="#10b981"/>
+  <rect x="274" y="150" width="14" height="5" rx="2.5" fill="#10b981" opacity="0.6"/>
+
+  <!-- Item 2 -->
+  <rect x="16" y="180" width="278" height="72" rx="12" fill="#1a2038"/>
+  <rect x="28" y="192" width="48" height="48" rx="8" fill="url(#prod2)"/>
+  <circle cx="52" cy="216" r="14" fill="#06b6d4" opacity="0.3"/>
+  <circle cx="52" cy="216" r="7" fill="#06b6d4" opacity="0.8"/>
+  <rect x="88" y="194" width="90" height="7" rx="3.5" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="88" y="206" width="70" height="5" rx="2.5" fill="#64748b" opacity="0.5"/>
+  <rect x="88" y="220" width="50" height="7" rx="3.5" fill="#7b68ee" opacity="0.9"/>
+  <rect x="236" y="200" width="46" height="22" rx="11" fill="#1e2a4a"/>
+  <rect x="244" y="207" width="30" height="8" rx="4" fill="#64748b" opacity="0.5"/>
+
+  <!-- Item 3 -->
+  <rect x="16" y="262" width="278" height="72" rx="12" fill="#1a2038"/>
+  <rect x="28" y="274" width="48" height="48" rx="8" fill="url(#prod3)"/>
+  <circle cx="52" cy="298" r="14" fill="#ec4899" opacity="0.3"/>
+  <circle cx="52" cy="298" r="7" fill="#ec4899" opacity="0.8"/>
+  <rect x="88" y="276" width="110" height="7" rx="3.5" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="88" y="288" width="70" height="5" rx="2.5" fill="#64748b" opacity="0.5"/>
+  <rect x="88" y="302" width="40" height="7" rx="3.5" fill="#7b68ee" opacity="0.9"/>
+  <rect x="236" y="282" width="46" height="22" rx="11" fill="#1e2a4a"/>
+  <rect x="244" y="289" width="30" height="8" rx="4" fill="#64748b" opacity="0.5"/>
+
+  <!-- Item 4 -->
+  <rect x="16" y="344" width="278" height="72" rx="12" fill="#1a2038"/>
+  <rect x="28" y="356" width="48" height="48" rx="8" fill="#1e2a3a"/>
+  <circle cx="52" cy="380" r="14" fill="#f59e0b" opacity="0.3"/>
+  <circle cx="52" cy="380" r="7" fill="#f59e0b" opacity="0.8"/>
+  <rect x="88" y="358" width="80" height="7" rx="3.5" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="88" y="370" width="60" height="5" rx="2.5" fill="#64748b" opacity="0.5"/>
+  <rect x="88" y="384" width="55" height="7" rx="3.5" fill="#7b68ee" opacity="0.9"/>
+  <rect x="236" y="364" width="46" height="22" rx="11" fill="#1e2a4a"/>
+  <rect x="244" y="371" width="30" height="8" rx="4" fill="#64748b" opacity="0.5"/>
+
+  <!-- Right panel - product detail -->
+  <!-- Large product image -->
+  <rect x="322" y="16" width="296" height="230" rx="16" fill="#1a2038"/>
+  <rect x="322" y="16" width="296" height="230" rx="16" fill="url(#prod1)" opacity="0.6"/>
+  <!-- Product visual -->
+  <circle cx="470" cy="100" r="60" fill="#7b68ee" opacity="0.15"/>
+  <circle cx="470" cy="100" r="40" fill="#7b68ee" opacity="0.2"/>
+  <circle cx="470" cy="100" r="24" fill="#7b68ee" opacity="0.5"/>
+  <text x="470" y="108" font-size="28" text-anchor="middle" fill="white" opacity="0.9">👟</text>
+  <!-- Badge -->
+  <rect x="334" y="28" width="50" height="20" rx="10" fill="#10b981" opacity="0.9"/>
+  <rect x="342" y="33" width="34" height="10" rx="5" fill="white" opacity="0.9"/>
+  <!-- Thumbnail row -->
+  <rect x="334" y="194" width="50" height="42" rx="8" fill="#7b68ee" opacity="0.3" stroke="#7b68ee" stroke-width="1.5"/>
+  <rect x="392" y="194" width="50" height="42" rx="8" fill="#1e2a4a"/>
+  <rect x="450" y="194" width="50" height="42" rx="8" fill="#1e2a4a"/>
+  <rect x="508" y="194" width="50" height="42" rx="8" fill="#1e2a4a"/>
+  <rect x="566" y="194" width="44" height="42" rx="8" fill="#1e2a4a"/>
+
+  <!-- Product info -->
+  <rect x="322" y="256" width="296" height="178" rx="16" fill="#1a2038"/>
+  <rect x="338" y="270" width="160" height="10" rx="5" fill="#e2e8f0" opacity="0.85"/>
+  <rect x="338" y="286" width="100" height="7" rx="3.5" fill="#64748b" opacity="0.5"/>
+  <!-- Stars -->
+  <text x="338" y="310" font-size="12" fill="#f59e0b">★★★★★</text>
+  <rect x="410" y="302" width="30" height="7" rx="3.5" fill="#64748b" opacity="0.4"/>
+  <!-- Price -->
+  <rect x="338" y="320" width="70" height="14" rx="7" fill="#7b68ee" opacity="0.2"/>
+  <rect x="346" y="324" width="54" height="6" rx="3" fill="#7b68ee" opacity="0.9"/>
+  <rect x="418" y="322" width="50" height="10" rx="5" fill="#64748b" opacity="0.2"/>
+  <rect x="426" y="325" width="34" height="4" rx="2" fill="#64748b" opacity="0.4"/>
+  <!-- Size selector -->
+  <rect x="338" y="344" width="30" height="22" rx="6" fill="#1e2a4a"/>
+  <rect x="343" y="350" width="20" height="10" rx="5" fill="#64748b" opacity="0.4"/>
+  <rect x="376" y="344" width="30" height="22" rx="6" fill="#7b68ee"/>
+  <rect x="381" y="350" width="20" height="10" rx="5" fill="white" opacity="0.9"/>
+  <rect x="414" y="344" width="30" height="22" rx="6" fill="#1e2a4a"/>
+  <rect x="419" y="350" width="20" height="10" rx="5" fill="#64748b" opacity="0.4"/>
+  <rect x="452" y="344" width="30" height="22" rx="6" fill="#1e2a4a"/>
+  <rect x="457" y="350" width="20" height="10" rx="5" fill="#64748b" opacity="0.4"/>
+  <!-- Add to cart button -->
+  <rect x="338" y="378" width="165" height="40" rx="12" fill="url(#btn)"/>
+  <rect x="370" y="394" width="100" height="8" rx="4" fill="white" opacity="0.9"/>
+  <rect x="511" y="378" width="95" height="40" rx="12" fill="#1e2a4a" stroke="#7b68ee" stroke-width="0.8" stroke-opacity="0.5"/>
+  <rect x="530" y="394" width="58" height="8" rx="4" fill="#7b68ee" opacity="0.7"/>
+
+  <!-- Cart / order summary panel -->
+  <rect x="630" y="16" width="154" height="418" rx="16" fill="#13132e" stroke="#7b68ee" stroke-width="0.5" stroke-opacity="0.2"/>
+  <rect x="646" y="28" width="80" height="8" rx="4" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="724" y="24" width="24" height="16" rx="8" fill="#7b68ee" opacity="0.9"/>
+  <rect x="729" y="28" width="14" height="8" rx="4" fill="white" opacity="0.9"/>
+  <!-- Cart items -->
+  <rect x="642" y="50" width="130" height="1" fill="#ffffff" opacity="0.05"/>
+  <rect x="642" y="60" width="36" height="36" rx="8" fill="#2d1b69"/>
+  <circle cx="660" cy="78" r="10" fill="#7b68ee" opacity="0.4"/>
+  <rect x="684" y="62" width="60" height="6" rx="3" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="684" y="72" width="40" height="5" rx="2.5" fill="#64748b" opacity="0.4"/>
+  <rect x="684" y="82" width="30" height="5" rx="2.5" fill="#7b68ee" opacity="0.7"/>
+  <rect x="642" y="106" width="130" height="1" fill="#ffffff" opacity="0.05"/>
+  <rect x="642" y="116" width="36" height="36" rx="8" fill="#1b3a5c"/>
+  <circle cx="660" cy="134" r="10" fill="#06b6d4" opacity="0.4"/>
+  <rect x="684" y="118" width="55" height="6" rx="3" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="684" y="128" width="40" height="5" rx="2.5" fill="#64748b" opacity="0.4"/>
+  <rect x="684" y="138" width="35" height="5" rx="2.5" fill="#7b68ee" opacity="0.7"/>
+  <rect x="642" y="162" width="130" height="1" fill="#ffffff" opacity="0.05"/>
+  <!-- Promo code -->
+  <rect x="642" y="172" width="130" height="32" rx="8" fill="#1e2a4a"/>
+  <rect x="650" y="182" width="80" height="12" rx="6" fill="#0f1527"/>
+  <rect x="738" y="175" width="26" height="26" rx="6" fill="#7b68ee" opacity="0.6"/>
+  <!-- Summary -->
+  <rect x="642" y="216" width="130" height="1" fill="#ffffff" opacity="0.05"/>
+  <rect x="642" y="226" width="50" height="5" rx="2.5" fill="#64748b" opacity="0.4"/>
+  <rect x="706" y="226" width="36" height="5" rx="2.5" fill="#e2e8f0" opacity="0.6"/>
+  <rect x="642" y="240" width="50" height="5" rx="2.5" fill="#64748b" opacity="0.4"/>
+  <rect x="710" y="240" width="32" height="5" rx="2.5" fill="#10b981" opacity="0.7"/>
+  <rect x="642" y="258" width="130" height="1" fill="#ffffff" opacity="0.08"/>
+  <rect x="642" y="268" width="50" height="7" rx="3.5" fill="#e2e8f0" opacity="0.8"/>
+  <rect x="694" y="268" width="48" height="7" rx="3.5" fill="#7b68ee" opacity="0.9"/>
+  <!-- Checkout button -->
+  <rect x="642" y="288" width="130" height="38" rx="10" fill="url(#btn)"/>
+  <rect x="666" y="303" width="82" height="8" rx="4" fill="white" opacity="0.95"/>
+  <!-- Payment icons -->
+  <rect x="642" y="338" width="130" height="1" fill="#ffffff" opacity="0.05"/>
+  <rect x="642" y="350" width="28" height="18" rx="4" fill="#1e2a4a"/>
+  <rect x="678" y="350" width="28" height="18" rx="4" fill="#1e2a4a"/>
+  <rect x="714" y="350" width="28" height="18" rx="4" fill="#1e2a4a"/>
+  <rect x="750" y="350" width="20" height="18" rx="4" fill="#1e2a4a"/>
+  <!-- Track order -->
+  <rect x="642" y="380" width="130" height="1" fill="#ffffff" opacity="0.05"/>
+  <circle cx="660" cy="408" r="10" fill="#10b981" opacity="0.2"/>
+  <circle cx="660" cy="408" r="5" fill="#10b981" opacity="0.8"/>
+  <rect x="676" y="404" width="80" height="5" rx="2.5" fill="#10b981" opacity="0.5"/>
+  <rect x="676" y="413" width="60" height="4" rx="2" fill="#64748b" opacity="0.3"/>
+</svg>

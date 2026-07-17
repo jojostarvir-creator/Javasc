@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0f23"/>
+      <stop offset="100%" stop-color="#1a1a3e"/>
+    </linearGradient>
+    <linearGradient id="bar1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7b68ee"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <linearGradient id="bar2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7b68ee" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7b68ee" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Top navbar -->
+  <rect width="800" height="44" fill="#13132e" rx="0"/>
+  <circle cx="22" cy="22" r="8" fill="#7b68ee"/>
+  <rect x="36" y="17" width="60" height="5" rx="2.5" fill="#7b68ee" opacity="0.9"/>
+  <rect x="36" y="26" width="36" height="3" rx="1.5" fill="#4a4a8a" opacity="0.6"/>
+  <rect x="620" y="14" width="60" height="16" rx="8" fill="#7b68ee" opacity="0.15"/>
+  <rect x="630" y="18" width="40" height="8" rx="4" fill="#7b68ee" opacity="0.5"/>
+  <circle cx="740" cy="22" r="12" fill="#2a2a5a"/>
+  <circle cx="740" cy="22" r="8" fill="#7b68ee" opacity="0.4"/>
+  <rect x="762" y="17" width="24" height="10" rx="5" fill="#10b981" opacity="0.8"/>
+
+  <!-- Sidebar -->
+  <rect x="0" y="44" width="52" height="406" fill="#0d0d20"/>
+  <rect x="14" y="60" width="24" height="3" rx="1.5" fill="#7b68ee" opacity="0.8"/>
+  <rect x="14" y="67" width="24" height="3" rx="1.5" fill="#4a4a8a" opacity="0.4"/>
+  <rect x="14" y="74" width="24" height="3" rx="1.5" fill="#4a4a8a" opacity="0.4"/>
+  <circle cx="26" cy="96" r="8" fill="#7b68ee" opacity="0.15"/>
+  <circle cx="26" cy="96" r="4" fill="#7b68ee" opacity="0.8"/>
+  <circle cx="26" cy="118" r="4" fill="#4a4a8a" opacity="0.4"/>
+  <circle cx="26" cy="140" r="4" fill="#4a4a8a" opacity="0.4"/>
+  <circle cx="26" cy="162" r="4" fill="#4a4a8a" opacity="0.4"/>
+  <circle cx="26" cy="184" r="4" fill="#4a4a8a" opacity="0.4"/>
+
+  <!-- Metric cards row -->
+  <!-- Card 1 -->
+  <rect x="64" y="56" width="166" height="72" rx="10" fill="#1e1e42" stroke="#7b68ee" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="76" y="68" width="50" height="4" rx="2" fill="#94a3b8" opacity="0.6"/>
+  <text x="76" y="108" font-family="monospace" font-size="22" font-weight="bold" fill="#ffffff">$48.2K</text>
+  <rect x="176" y="65" width="42" height="16" rx="8" fill="#10b981" opacity="0.15"/>
+  <text x="182" y="77" font-family="monospace" font-size="9" fill="#10b981">+12.5%</text>
+
+  <!-- Card 2 -->
+  <rect x="242" y="56" width="166" height="72" rx="10" fill="#1e1e42" stroke="#06b6d4" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="254" y="68" width="50" height="4" rx="2" fill="#94a3b8" opacity="0.6"/>
+  <text x="254" y="108" font-family="monospace" font-size="22" font-weight="bold" fill="#ffffff">12,540</text>
+  <rect x="354" y="65" width="38" height="16" rx="8" fill="#06b6d4" opacity="0.15"/>
+  <text x="359" y="77" font-family="monospace" font-size="9" fill="#06b6d4">+8.1%</text>
+
+  <!-- Card 3 -->
+  <rect x="420" y="56" width="166" height="72" rx="10" fill="#1e1e42" stroke="#f59e0b" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="432" y="68" width="50" height="4" rx="2" fill="#94a3b8" opacity="0.6"/>
+  <text x="432" y="108" font-family="monospace" font-size="22" font-weight="bold" fill="#ffffff">96.3%</text>
+  <rect x="532" y="65" width="38" height="16" rx="8" fill="#f59e0b" opacity="0.15"/>
+  <text x="538" y="77" font-family="monospace" font-size="9" fill="#f59e0b">+2.4%</text>
+
+  <!-- Card 4 -->
+  <rect x="598" y="56" width="168" height="72" rx="10" fill="#1e1e42" stroke="#ec4899" stroke-width="0.5" stroke-opacity="0.3"/>
+  <rect x="610" y="68" width="50" height="4" rx="2" fill="#94a3b8" opacity="0.6"/>
+  <text x="610" y="108" font-family="monospace" font-size="22" font-weight="bold" fill="#ffffff">3,218</text>
+  <rect x="710" y="65" width="38" height="16" rx="8" fill="#ec4899" opacity="0.15"/>
+  <text x="716" y="77" font-family="monospace" font-size="9" fill="#ec4899">+5.7%</text>
+
+  <!-- Bar Chart -->
+  <rect x="64" y="144" width="380" height="200" rx="10" fill="#1a1a38" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.08"/>
+  <rect x="80" y="156" width="80" height="6" rx="3" fill="#94a3b8" opacity="0.4"/>
+  <!-- Grid lines -->
+  <line x1="80" y1="190" x2="432" y2="190" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <line x1="80" y1="210" x2="432" y2="210" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <line x1="80" y1="230" x2="432" y2="230" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <line x1="80" y1="250" x2="432" y2="250" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <line x1="80" y1="270" x2="432" y2="270" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <!-- Bars -->
+  <rect x="96" y="228" width="28" height="62" rx="4" fill="url(#bar1)" opacity="0.9"/>
+  <rect x="138" y="210" width="28" height="80" rx="4" fill="url(#bar1)" opacity="0.9"/>
+  <rect x="180" y="220" width="28" height="70" rx="4" fill="url(#bar2)" opacity="0.9"/>
+  <rect x="222" y="198" width="28" height="92" rx="4" fill="url(#bar1)" opacity="0.9"/>
+  <rect x="264" y="215" width="28" height="75" rx="4" fill="url(#bar2)" opacity="0.9"/>
+  <rect x="306" y="188" width="28" height="102" rx="4" fill="url(#bar1)" opacity="0.9"/>
+  <rect x="348" y="202" width="28" height="88" rx="4" fill="url(#bar2)" opacity="0.9"/>
+  <rect x="390" y="193" width="28" height="97" rx="4" fill="url(#bar1)" opacity="0.9"/>
+  <!-- X-axis labels -->
+  <text x="100" y="308" font-size="9" fill="#64748b" text-anchor="middle">Jan</text>
+  <text x="142" y="308" font-size="9" fill="#64748b" text-anchor="middle">Feb</text>
+  <text x="184" y="308" font-size="9" fill="#64748b" text-anchor="middle">Mar</text>
+  <text x="226" y="308" font-size="9" fill="#64748b" text-anchor="middle">Apr</text>
+  <text x="268" y="308" font-size="9" fill="#64748b" text-anchor="middle">May</text>
+  <text x="310" y="308" font-size="9" fill="#64748b" text-anchor="middle">Jun</text>
+  <text x="352" y="308" font-size="9" fill="#64748b" text-anchor="middle">Jul</text>
+  <text x="394" y="308" font-size="9" fill="#64748b" text-anchor="middle">Aug</text>
+
+  <!-- Line Chart -->
+  <rect x="458" y="144" width="308" height="200" rx="10" fill="#1a1a38" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.08"/>
+  <rect x="474" y="156" width="80" height="6" rx="3" fill="#94a3b8" opacity="0.4"/>
+  <rect x="686" y="152" width="8" height="8" rx="2" fill="#7b68ee"/>
+  <rect x="698" y="154" width="30" height="4" rx="2" fill="#94a3b8" opacity="0.4"/>
+  <rect x="732" y="152" width="8" height="8" rx="2" fill="#06b6d4"/>
+  <rect x="744" y="154" width="16" height="4" rx="2" fill="#94a3b8" opacity="0.4"/>
+  <!-- Grid lines -->
+  <line x1="474" y1="190" x2="754" y2="190" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <line x1="474" y1="215" x2="754" y2="215" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <line x1="474" y1="240" x2="754" y2="240" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <line x1="474" y1="265" x2="754" y2="265" stroke="#ffffff" stroke-width="0.4" stroke-opacity="0.06"/>
+  <!-- Area fill -->
+  <path d="M474 270 L506 250 L538 240 L570 225 L602 230 L634 210 L666 215 L698 195 L730 200 L754 185 L754 290 L474 290 Z" fill="url(#line)"/>
+  <!-- Line 1 -->
+  <polyline points="474,270 506,250 538,240 570,225 602,230 634,210 666,215 698,195 730,200 754,185" fill="none" stroke="#7b68ee" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <!-- Line 2 -->
+  <polyline points="474,280 506,265 538,270 570,255 602,260 634,245 666,250 698,238 730,242 754,230" fill="none" stroke="#06b6d4" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="4,2"/>
+  <!-- Dots -->
+  <circle cx="698" cy="195" r="4" fill="#7b68ee" stroke="#1a1a38" stroke-width="2"/>
+  <circle cx="754" cy="185" r="4" fill="#7b68ee" stroke="#1a1a38" stroke-width="2"/>
+
+  <!-- Table section -->
+  <rect x="64" y="358" width="702" height="76" rx="10" fill="#1a1a38" stroke="#ffffff" stroke-width="0.3" stroke-opacity="0.08"/>
+  <rect x="80" y="368" width="50" height="4" rx="2" fill="#94a3b8" opacity="0.4"/>
+  <!-- Table rows -->
+  <rect x="80" y="382" width="670" height="1" fill="#ffffff" opacity="0.05"/>
+  <circle cx="96" cy="398" r="8" fill="#7b68ee" opacity="0.2"/>
+  <rect x="110" y="394" width="80" height="4" rx="2" fill="#e2e8f0" opacity="0.7"/>
+  <rect x="300" y="394" width="40" height="4" rx="2" fill="#10b981" opacity="0.6"/>
+  <rect x="450" y="394" width="60" height="4" rx="2" fill="#94a3b8" opacity="0.4"/>
+  <rect x="650" y="390" width="40" height="12" rx="6" fill="#7b68ee" opacity="0.2"/>
+  <rect x="660" y="394" width="20" height="4" rx="2" fill="#7b68ee" opacity="0.6"/>
+
+  <!-- Donut chart mini -->
+  <circle cx="718" cy="258" r="52" fill="none" stroke="#7b68ee" stroke-width="18" stroke-dasharray="164 164" stroke-dashoffset="0" opacity="0.9" transform="rotate(-90 718 258)"/>
+  <circle cx="718" cy="258" r="52" fill="none" stroke="#06b6d4" stroke-width="18" stroke-dasharray="68 164" stroke-dashoffset="-164" opacity="0.9" transform="rotate(-90 718 258)"/>
+  <circle cx="718" cy="258" r="52" fill="none" stroke="#f59e0b" stroke-width="18" stroke-dasharray="36 164" stroke-dashoffset="-232" opacity="0.9" transform="rotate(-90 718 258)"/>
+  <circle cx="718" cy="258" r="36" fill="#1a1a38"/>
+  <text x="718" y="254" font-family="monospace" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle">68%</text>
+  <text x="718" y="268" font-family="monospace" font-size="8" fill="#94a3b8" text-anchor="middle">score</text>
+</svg>
