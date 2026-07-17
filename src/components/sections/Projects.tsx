@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { projects } from "@/data/projects";
 
@@ -48,20 +49,17 @@ export default function Projects() {
               </div>
 
               {/* Preview area */}
-              <div className="h-44 bg-gradient-to-br from-slate-900 to-[#0d0d1f] relative overflow-hidden border-b border-white/5">
-                <div
-                  className="absolute inset-0 opacity-40"
-                  style={{
-                    background: `radial-gradient(ellipse at ${i % 2 === 0 ? "30%" : "70%"} 50%, ${
-                      ["#7b68ee", "#6366f1", "#8b5cf6", "#06b6d4", "#ec4899", "#f59e0b"][i % 6]
-                    }20, transparent 70%)`,
-                  }}
+              <div className="h-44 relative overflow-hidden border-b border-white/5 bg-slate-900">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-6xl opacity-10 select-none">
-                    {project.category === "mobile" ? "📱" : project.category === "api" ? "⚙️" : "🖥️"}
-                  </span>
-                </div>
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
                 {/* Links on hover */}
                 <div className="absolute top-3 right-3 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                   {project.github !== "#" && (

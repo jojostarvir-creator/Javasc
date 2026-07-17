@@ -60,6 +60,7 @@ export const projects: Project[] = [
     title: "Akili",
     description: "Application web React avec interface intuitive et composants réutilisables.",
     image: "/projects/akili.png",
+
     stack: ["React", "JavaScript", "CSS"],
     features: ["UI responsive", "Composants React", "Navigation fluide"],
     github: "#",
