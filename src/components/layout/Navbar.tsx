@@ -2,8 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiSun, FiMoon } from "react-icons/fi";
 
 const links = [
   { label: "Accueil",    href: "#hero"       },
@@ -16,6 +17,10 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mounted, setMounted]       = useState(false);
+  const { theme, setTheme }         = useTheme();
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 20);
@@ -58,6 +63,19 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
+            {/* Theme toggle */}
+            {mounted && (
+              <motion.button
+                whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-[#7b68ee]/40 transition-all"
+              >
+                {theme === "dark"
+                  ? <FiSun className="w-4 h-4" />
+                  : <FiMoon className="w-4 h-4" />
+                }
+              </motion.button>
+            )}
             <motion.button
               whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
               onClick={() => go("#contact")}
