@@ -8,11 +8,13 @@ import Projects from "@/components/sections/Projects";
 import Contact from "@/components/sections/Contact";
 import BottomSection from "@/components/sections/BottomSection";
 import LoadingScreen from "@/components/ui/LoadingScreen";
+import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 
 export default function Home() {
   return (
     <>
       <LoadingScreen />
+      <WhatsAppFloat />
       <Navbar />
       <main>
         <Hero />

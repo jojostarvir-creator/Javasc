@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion, useInView } from "framer-motion";
 
 const skills = [
   { name: "HTML5",      pct: 95, color: "#E34F26" },
@@ -19,7 +20,30 @@ const skills = [
 
 const cols = [skills.slice(0, 4), skills.slice(4, 8), skills.slice(8, 12)];
 
+function AnimatedCounter({ target, color, trigger }: { target: number; color: string; trigger: boolean }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!trigger) return;
+    let start = 0;
+    const duration = 1000;
+    const step = 16;
+    const increment = target / (duration / step);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) { setCount(target); clearInterval(timer); }
+      else setCount(Math.floor(start));
+    }, step);
+    return () => clearInterval(timer);
+  }, [trigger, target]);
+
+  return <span className="text-xs font-semibold tabular-nums" style={{ color }}>{count}%</span>;
+}
+
 export default function Skills() {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
+
   return (
     <section id="skills" className="py-24 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +67,7 @@ export default function Skills() {
         </motion.div>
 
         {/* 3 columns of progress bars */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cols.map((col, ci) => (
             <div key={ci} className="flex flex-col gap-5">
               {col.map((skill, si) => (
@@ -56,17 +80,22 @@ export default function Skills() {
                 >
                   <div className="flex items-center justify-between mb-1.5">
                     <span className="text-sm font-medium text-slate-300">{skill.name}</span>
-                    <span className="text-xs font-semibold" style={{ color: skill.color }}>{skill.pct}%</span>
+                    <AnimatedCounter target={skill.pct} color={skill.color} trigger={inView} />
                   </div>
                   <div className="h-1.5 w-full rounded-full bg-white/5 overflow-hidden">
                     <motion.div
                       initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.pct}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.9, delay: (ci * 4 + si) * 0.05 + 0.2, ease: "easeOut" }}
-                      className="h-full rounded-full"
+                      animate={inView ? { width: `${skill.pct}%` } : { width: 0 }}
+                      transition={{ duration: 1.0, delay: (ci * 4 + si) * 0.05 + 0.1, ease: "easeOut" }}
+                      className="h-full rounded-full relative"
                       style={{ background: skill.color }}
-                    />
+                    >
+                      {/* Glow tip */}
+                      <span
+                        className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full blur-[3px]"
+                        style={{ background: skill.color }}
+                      />
+                    </motion.div>
                   </div>
                 </motion.div>
               ))}
