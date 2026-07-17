@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin,
   FiGlobe, FiCalendar, FiCheckCircle,
@@ -79,9 +80,14 @@ export default function CVPage() {
             style={{ background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%)" }}>
 
             {/* Avatar */}
-            <div className="w-24 h-24 rounded-2xl flex-shrink-0 flex items-center justify-center text-4xl font-black text-white border-4 border-indigo-400/40 shadow-xl"
-              style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6)" }}>
-              DF
+            <div className="w-24 h-24 rounded-2xl flex-shrink-0 overflow-hidden border-4 border-indigo-400/40 shadow-xl relative">
+              <Image
+                src="/photo.jpg"
+                alt="Donald Fambo"
+                fill
+                sizes="96px"
+                className="object-cover object-top"
+              />
             </div>
 
             {/* Info */}
