@@ -88,7 +88,7 @@ export default function Projects() {
                     <span className="text-[10px] text-slate-600">{project.year}</span>
                   </div>
                   <p className="text-slate-500 text-xs leading-relaxed mb-4 flex-1">
-                    {project.description}
+                    {tr(project.description, lang)}
                   </p>
                   <div className="flex flex-wrap gap-1.5">
                     {project.stack.map((t) => (

@@ -1,7 +1,7 @@
 export interface Project {
   id: number;
   title: string;
-  description: string;
+  description: { fr: string; en: string };
   longDescription: { fr: string; en: string };
   image: string;
   stack: string[];
@@ -16,7 +16,10 @@ export const projects: Project[] = [
   {
     id: 1,
     title: "Akili",
-    description: "Application web React avec interface intuitive, composants réutilisables et design moderne responsive.",
+    description: {
+      fr: "Application web React avec interface intuitive, composants réutilisables et design moderne responsive.",
+      en: "React web application with an intuitive interface, reusable components, and modern responsive design.",
+    },
     longDescription: {
       fr: "Akili est une application web construite avec React, axée sur une interface utilisateur claire et des composants réutilisables. Le projet met en avant une navigation fluide, un design responsive adapté à tous les écrans, et une architecture de composants modulaire facilitant la maintenance.",
       en: "Akili is a React web application focused on a clean user interface and reusable components. The project showcases smooth navigation, a responsive design adapted to all screens, and a modular component architecture that simplifies maintenance.",
@@ -36,7 +39,10 @@ export const projects: Project[] = [
   {
     id: 2,
     title: "Décor Prestige",
-    description: "Site vitrine pour une entreprise de décoration intérieure — galerie produits, catalogue et formulaire de devis.",
+    description: {
+      fr: "Site vitrine pour une entreprise de décoration intérieure — galerie produits, catalogue et formulaire de devis.",
+      en: "Showcase website for an interior decoration company — product gallery, catalogue, and quote request form.",
+    },
     longDescription: {
       fr: "Décor Prestige est un site vitrine réalisé pour une entreprise spécialisée dans la décoration intérieure. Il présente une galerie de réalisations, un catalogue de services détaillé et un formulaire de demande de devis. Le design élégant reflète l'identité visuelle premium de la marque.",
       en: "Décor Prestige is a showcase website created for an interior decoration company. It features a gallery of completed projects, a detailed service catalogue, and a quote request form. The elegant design reflects the brand's premium visual identity.",
