@@ -6,7 +6,6 @@ import Skills from "@/components/sections/Skills";
 import Services from "@/components/sections/Services";
 import Projects from "@/components/sections/Projects";
 import Testimonials from "@/components/sections/Testimonials";
-import Blog from "@/components/sections/Blog";
 import GitHubStats from "@/components/sections/GitHubStats";
 import Contact from "@/components/sections/Contact";
 import BottomSection from "@/components/sections/BottomSection";
@@ -27,7 +26,6 @@ export default function Home() {
         <Projects />
         <Testimonials />
         <GitHubStats />
-        <Blog />
         <Contact />
         <BottomSection />
       </main>

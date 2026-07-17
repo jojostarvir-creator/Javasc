@@ -2,14 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { projects } from "@/data/projects";
 import { useLang } from "@/context/LangContext";
 import { T, tr } from "@/data/translations";
 
 export default function Projects() {
   const { lang } = useLang();
-  const displayed = projects.slice(0, 6);
 
   return (
     <section id="projects" className="py-24 border-t border-white/5">
@@ -35,15 +33,15 @@ export default function Projects() {
           </h2>
         </motion.div>
 
-        {/* Numbered cards grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {displayed.map((project, i) => (
+        {/* Cards — 2 columns centred */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          {projects.map((project, i) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: i * 0.08 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
               className="group relative flex flex-col rounded-2xl border border-white/6 bg-white/2 hover:border-[#7b68ee]/30 hover:bg-[#7b68ee]/4 transition-all duration-300 overflow-hidden"
             >
               {/* Number badge */}
@@ -53,34 +51,17 @@ export default function Projects() {
                 </span>
               </div>
 
-              {/* Preview area */}
-              <div className="h-44 relative overflow-hidden border-b border-white/5 bg-slate-900">
+              {/* Preview image */}
+              <div className="h-52 relative overflow-hidden border-b border-white/5 bg-slate-900">
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width: 640px) 100vw, 50vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   unoptimized={project.image.endsWith(".svg")}
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
                 />
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent" />
-                {/* Links on hover */}
-                <div className="absolute top-3 right-3 flex gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  {project.github !== "#" && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-lg bg-slate-900/90 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-                      <FiGithub className="w-3.5 h-3.5" />
-                    </a>
-                  )}
-                  {project.live !== "#" && (
-                    <a href={project.live} target="_blank" rel="noopener noreferrer"
-                      className="w-8 h-8 rounded-lg bg-slate-900/90 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-                      <FiExternalLink className="w-3.5 h-3.5" />
-                    </a>
-                  )}
-                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
               </div>
 
               {/* Content */}
@@ -91,7 +72,6 @@ export default function Projects() {
                 <p className="text-slate-500 text-xs leading-relaxed mb-4 flex-1">
                   {project.description}
                 </p>
-                {/* Stack */}
                 <div className="flex flex-wrap gap-1.5">
                   {project.stack.map((t) => (
                     <span key={t} className="px-2 py-0.5 text-[10px] font-medium text-slate-400 border border-white/6 rounded-full bg-white/2">
@@ -103,6 +83,18 @@ export default function Projects() {
             </motion.div>
           ))}
         </div>
+
+        {/* "More coming soon" note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          className="text-center text-slate-600 text-xs mt-10"
+        >
+          {lang === "fr"
+            ? "D'autres projets arrivent bientôt — contactez-moi pour voir mes réalisations complètes."
+            : "More projects coming soon — contact me to see my full portfolio."}
+        </motion.p>
 
       </div>
     </section>

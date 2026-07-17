@@ -124,7 +124,7 @@ export default function Navbar() {
               <button onClick={() => go("#contact")}
                 className="mt-2 py-3 rounded-xl text-sm font-semibold text-white text-center"
                 style={{ background: "#7b68ee" }}>
-                Hire Me
+                {tr(T.nav.hire, lang)}
               </button>
             </div>
           </motion.div>
