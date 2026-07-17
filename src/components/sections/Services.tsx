@@ -64,19 +64,19 @@ export default function Services() {
                 {iconMap[s.icon]}
               </div>
               <span className="text-[10px] font-semibold text-[#7b68ee] uppercase tracking-widest mb-2 block">
-                {s.tag}
+                {tr(s.tag, lang)}
               </span>
               <h3 className="text-white font-bold text-base mb-2 group-hover:text-[#7b68ee] transition-colors">
-                {s.title}
+                {tr(s.title, lang)}
               </h3>
               <p className="text-slate-500 text-xs leading-relaxed mb-4">
-                {s.description}
+                {tr(s.description, lang)}
               </p>
               <ul className="space-y-1.5">
                 {s.features.map((f) => (
-                  <li key={f} className="flex items-center gap-2 text-xs text-slate-400">
+                  <li key={f.fr} className="flex items-center gap-2 text-xs text-slate-400">
                     <span className="w-1 h-1 rounded-full bg-[#7b68ee] flex-shrink-0" />
-                    {f}
+                    {tr(f, lang)}
                   </li>
                 ))}
               </ul>

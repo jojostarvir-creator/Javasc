@@ -10,8 +10,8 @@ export default function About() {
 
   const stats = [
     { value: "3+",   label: tr(T.about.years,    lang) },
-    { value: "20+",  label: tr(T.about.projects, lang) },
-    { value: "15+",  label: tr(T.about.clients,  lang) },
+    { value: "10+",  label: tr(T.about.projects, lang) },
+    { value: "8+",   label: tr(T.about.clients,  lang) },
     { value: "100%", label: tr(T.about.rate,     lang) },
   ];
 
