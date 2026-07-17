@@ -186,7 +186,7 @@ export default function CVPage() {
                     { icon: FiMail,   val: "fambodonald110@gmail.com" },
                     { icon: FiPhone,  val: "+229 01 56 33 62 82" },
                     { icon: FiMapPin, val: "Bénin, Afrique de l'Ouest" },
-                    { icon: FiGlobe,  val: "javasc-ten.vercel.app" },
+                    { icon: FiGlobe,  val: "donald-fambo.vercel.app" },
                   ].map(({ icon: Icon, val }) => (
                     <li key={val} className="flex items-start gap-2 text-xs text-slate-600">
                       <Icon className="w-3 h-3 text-indigo-500 mt-0.5 flex-shrink-0" />

@@ -25,14 +25,14 @@ export const metadata: Metadata = {
     "création site web Bénin",
     "application mobile Bénin",
   ],
-  authors: [{ name: "Donald Fambo", url: "https://javasc-ten.vercel.app" }],
+  authors: [{ name: "Donald Fambo", url: "https://donald-fambo.vercel.app" }],
   creator: "Donald Fambo",
   openGraph: {
     title: "DevDonald — Développeur Web & Mobile Full Stack",
     description: "Donald Fambo — Développeur Full Stack basé au Bénin. React, Next.js, Flutter, Node.js. Disponible pour vos projets.",
     type: "website",
     locale: "fr_FR",
-    url: "https://javasc-ten.vercel.app",
+    url: "https://donald-fambo.vercel.app",
     siteName: "DevDonald Portfolio",
   },
   twitter: {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-snippet": -1 },
   },
   alternates: {
-    canonical: "https://javasc-ten.vercel.app",
+    canonical: "https://donald-fambo.vercel.app",
   },
 };
 
