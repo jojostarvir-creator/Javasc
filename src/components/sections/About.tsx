@@ -2,15 +2,19 @@
 
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
-
-const stats = [
-  { value: "3+",   label: "Ans d'expérience" },
-  { value: "20+",  label: "Projets livrés"   },
-  { value: "15+",  label: "Clients satisfaits" },
-  { value: "100%", label: "Satisfaction"      },
-];
+import { useLang } from "@/context/LangContext";
+import { T, tr } from "@/data/translations";
 
 export default function About() {
+  const { lang } = useLang();
+
+  const stats = [
+    { value: "3+",   label: tr(T.about.years,    lang) },
+    { value: "20+",  label: tr(T.about.projects, lang) },
+    { value: "15+",  label: tr(T.about.clients,  lang) },
+    { value: "100%", label: tr(T.about.rate,     lang) },
+  ];
+
   return (
     <section id="about" className="py-24 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,24 +28,23 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7b68ee]/30 bg-[#7b68ee]/10 mb-5">
-              <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">À propos</span>
+              <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">
+                {tr(T.about.badge, lang)}
+              </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4 leading-tight">
-              Passionné par le{" "}
+              {tr(T.about.title, lang)}{" "}
               <span className="bg-gradient-to-r from-[#7b68ee] to-indigo-400 bg-clip-text text-transparent">
-                développement web
+                {tr(T.about.titleHL, lang)}
               </span>
             </h2>
 
             <p className="text-slate-400 text-sm leading-relaxed mb-4">
-              Je suis <span className="text-white font-semibold">Donald Fambo</span>, développeur Full Stack basé au{" "}
-              <span className="text-white font-semibold">Bénin, Afrique de l&apos;Ouest</span>. Je conçois des applications web
-              modernes, performantes et accessibles.
+              {tr(T.about.p1, lang)}
             </p>
             <p className="text-slate-500 text-sm leading-relaxed mb-8">
-              Mon approche combine un souci du détail UI/UX avec une architecture backend solide — du prototype
-              au déploiement en production.
+              {tr(T.about.p2, lang)}
             </p>
 
             <motion.button
@@ -50,7 +53,7 @@ export default function About() {
               className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white"
               style={{ background: "#7b68ee" }}
             >
-              Me contacter <FiArrowRight className="w-4 h-4" />
+              {tr(T.about.cta, lang)} <FiArrowRight className="w-4 h-4" />
             </motion.button>
           </motion.div>
 

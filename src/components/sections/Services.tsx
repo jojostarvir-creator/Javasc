@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import { services } from "@/data/services";
+import { useLang } from "@/context/LangContext";
+import { T, tr } from "@/data/translations";
 import {
   FiGlobe, FiSmartphone, FiServer, FiBarChart2,
   FiLayout, FiZap,
@@ -17,6 +19,8 @@ const iconMap: Record<string, React.ReactNode> = {
 };
 
 export default function Services() {
+  const { lang } = useLang();
+
   return (
     <section id="services" className="py-24 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -28,16 +32,18 @@ export default function Services() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7b68ee]/30 bg-[#7b68ee]/10 mb-4">
-            <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">Services</span>
+            <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">
+              {tr(T.services.badge, lang)}
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Ce que je{" "}
+            {tr(T.services.title, lang)}{" "}
             <span className="bg-gradient-to-r from-[#7b68ee] to-indigo-400 bg-clip-text text-transparent">
-              propose
+              {tr(T.services.titleHL, lang)}
             </span>
           </h2>
           <p className="text-slate-500 text-sm mt-3 max-w-lg mx-auto">
-            Des solutions digitales complètes, du design au déploiement.
+            {tr(T.services.sub, lang)}
           </p>
         </motion.div>
 

@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { projects } from "@/data/projects";
+import { useLang } from "@/context/LangContext";
+import { T, tr } from "@/data/translations";
 
 export default function Projects() {
+  const { lang } = useLang();
   const displayed = projects.slice(0, 6);
 
   return (
@@ -20,12 +23,14 @@ export default function Projects() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7b68ee]/30 bg-[#7b68ee]/10 mb-4">
-            <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">Projets</span>
+            <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">
+              {tr(T.projects.badge, lang)}
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Mes{" "}
+            {tr(T.projects.title, lang)}{" "}
             <span className="bg-gradient-to-r from-[#7b68ee] to-indigo-400 bg-clip-text text-transparent">
-              réalisations
+              {tr(T.projects.titleHL, lang)}
             </span>
           </h2>
         </motion.div>

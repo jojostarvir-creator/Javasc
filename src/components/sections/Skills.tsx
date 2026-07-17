@@ -2,6 +2,8 @@
 
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+import { useLang } from "@/context/LangContext";
+import { T, tr } from "@/data/translations";
 
 const skills = [
   { name: "HTML5",      pct: 95, color: "#E34F26" },
@@ -41,6 +43,7 @@ function AnimatedCounter({ target, color, trigger }: { target: number; color: st
 }
 
 export default function Skills() {
+  const { lang } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -48,7 +51,6 @@ export default function Skills() {
     <section id="skills" className="py-24 border-t border-white/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,17 +58,18 @@ export default function Skills() {
           className="text-center mb-14"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#7b68ee]/30 bg-[#7b68ee]/10 mb-4">
-            <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">Compétences</span>
+            <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">
+              {tr(T.skills.badge, lang)}
+            </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
-            Mon{" "}
+            {tr(T.skills.title, lang)}{" "}
             <span className="bg-gradient-to-r from-[#7b68ee] to-indigo-400 bg-clip-text text-transparent">
-              niveau technique
+              {tr(T.skills.titleHL, lang)}
             </span>
           </h2>
         </motion.div>
 
-        {/* 3 columns of progress bars */}
         <div ref={ref} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {cols.map((col, ci) => (
             <div key={ci} className="flex flex-col gap-5">
@@ -90,7 +93,6 @@ export default function Skills() {
                       className="h-full rounded-full relative"
                       style={{ background: skill.color }}
                     >
-                      {/* Glow tip */}
                       <span
                         className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full blur-[3px]"
                         style={{ background: skill.color }}

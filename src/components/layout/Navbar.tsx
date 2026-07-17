@@ -5,20 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
 import { FiArrowUpRight, FiSun, FiMoon } from "react-icons/fi";
-
-const links = [
-  { label: "Accueil",    href: "#hero"       },
-  { label: "À propos",  href: "#about"      },
-  { label: "Skills",    href: "#skills"     },
-  { label: "Projets",   href: "#projects"   },
-  { label: "Contact",   href: "#contact"    },
-];
+import { useLang } from "@/context/LangContext";
+import { T, tr } from "@/data/translations";
 
 export default function Navbar() {
   const [scrolled, setScrolled]     = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted, setMounted]       = useState(false);
   const { theme, setTheme }         = useTheme();
+  const { lang, toggle: toggleLang } = useLang();
+
+  const links = [
+    { label: tr(T.nav.home,     lang), href: "#hero"     },
+    { label: tr(T.nav.about,    lang), href: "#about"    },
+    { label: tr(T.nav.skills,   lang), href: "#skills"   },
+    { label: tr(T.nav.projects, lang), href: "#projects" },
+    { label: tr(T.nav.contact,  lang), href: "#contact"  },
+  ];
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -63,6 +66,16 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="flex items-center gap-3">
+            {/* Lang toggle */}
+            {mounted && (
+              <motion.button
+                whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+                onClick={toggleLang}
+                className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-[#7b68ee]/40 transition-all text-xs font-bold"
+              >
+                {lang === "fr" ? "EN" : "FR"}
+              </motion.button>
+            )}
             {/* Theme toggle */}
             {mounted && (
               <motion.button
@@ -82,7 +95,7 @@ export default function Navbar() {
               className="hidden sm:flex items-center gap-1.5 px-5 py-2 rounded-lg text-sm font-semibold text-white"
               style={{ background: "#7b68ee" }}
             >
-              Hire Me <FiArrowUpRight className="w-3.5 h-3.5" />
+              {tr(T.nav.hire, lang)} <FiArrowUpRight className="w-3.5 h-3.5" />
             </motion.button>
             <button onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5">

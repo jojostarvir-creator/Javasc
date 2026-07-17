@@ -4,6 +4,8 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { useLang } from "@/context/LangContext";
+import { T, tr } from "@/data/translations";
 import {
   FiMail, FiPhone, FiMapPin,
   FiGithub, FiLinkedin,
@@ -20,29 +22,23 @@ interface FormData {
   message: string;
 }
 
-const contactInfo = [
-  { icon: FiMail,  label: "Email",       value: "fambodonald110@gmail.com", href: "mailto:fambodonald110@gmail.com" },
-  { icon: FiPhone, label: "Téléphone",   value: "+229 01 56 33 62 82",      href: "tel:+2290156336282" },
-  { icon: FiMapPin,label: "Localisation",value: "Bénin, Afrique de l'Ouest",href: "#" },
-];
-
 const socials = [
-  { icon: FiGithub,   label: "GitHub",    href: "https://github.com/jojostarvir-creator" },
-  { icon: FiLinkedin, label: "LinkedIn",  href: "https://www.linkedin.com/in/donald-dieudonn%C3%A9-fambo-sossa-4360843b2/" },
-  { icon: FaWhatsapp, label: "WhatsApp",  href: "https://wa.me/2290156336282" },
-];
-
-const reasons = [
-  "Projet web ou mobile",
-  "Mission freelance",
-  "Collaboration créative",
-  "Question technique",
+  { icon: FiGithub,   label: "GitHub",   href: "https://github.com/jojostarvir-creator" },
+  { icon: FiLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/donald-dieudonn%C3%A9-fambo-sossa-4360843b2/" },
+  { icon: FaWhatsapp, label: "WhatsApp", href: "https://wa.me/2290156336282" },
 ];
 
 export default function Contact() {
+  const { lang } = useLang();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
+
+  const contactInfo = [
+    { icon: FiMail,   label: "Email",                        value: "fambodonald110@gmail.com",  href: "mailto:fambodonald110@gmail.com" },
+    { icon: FiPhone,  label: tr(T.contact.phone,    lang),   value: "+229 01 56 33 62 82",        href: "tel:+2290156336282" },
+    { icon: FiMapPin, label: tr(T.contact.location, lang),   value: "Bénin, Afrique de l'Ouest", href: "#" },
+  ];
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
@@ -62,13 +58,13 @@ export default function Contact() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
       setSubmitted(true);
-      setToast({ message: "Message envoyé ! Je vous répondrai très bientôt.", type: "success" });
+      setToast({ message: tr(T.contact.toastOk, lang), type: "success" });
       reset();
       setTimeout(() => setSubmitted(false), 6000);
     } catch (err: unknown) {
       const e = err as { status?: number; text?: string };
       console.error("EmailJS error:", e?.status, e?.text);
-      setToast({ message: "Erreur lors de l'envoi. Contactez-moi directement par email.", type: "error" });
+      setToast({ message: tr(T.contact.toastErr, lang), type: "error" });
     } finally {
       setSubmitting(false);
     }
@@ -118,10 +114,10 @@ export default function Contact() {
         >
           <span className="inline-flex items-center gap-2 mb-4 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
             <HiSparkles className="w-3.5 h-3.5" />
-            Contact
+            {tr(T.contact.badge, lang)}
           </span>
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-5 leading-tight">
-            Donnons vie à votre{" "}
+            {tr(T.contact.title, lang)}{" "}
             <span
               style={{
                 background: "linear-gradient(90deg, #818cf8, #a78bfa, #22d3ee)",
@@ -129,11 +125,11 @@ export default function Contact() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              prochain projet
+              {tr(T.contact.titleHL, lang)}
             </span>
           </h2>
           <p className="text-slate-400 max-w-lg mx-auto leading-relaxed text-sm">
-            Une idée ? Un besoin ? Écrivez-moi — je réponds sous <span className="text-indigo-400 font-medium">24h</span> avec une proposition concrète.
+            {tr(T.contact.sub, lang)}
           </p>
         </motion.div>
 
@@ -162,19 +158,21 @@ export default function Contact() {
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400" />
                   </span>
-                  <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">Disponible maintenant</span>
+                  <span className="text-emerald-400 text-xs font-semibold tracking-wide uppercase">
+                    {tr(T.contact.available, lang)}
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Prêt à collaborer</h3>
+                <h3 className="text-xl font-bold text-white mb-2">{tr(T.contact.ready, lang)}</h3>
                 <p className="text-slate-300/70 text-sm leading-relaxed mb-5">
-                  Que ce soit pour un projet from scratch, une refonte ou une mission spécifique — je suis là.
+                  {tr(T.contact.readyDesc, lang)}
                 </p>
 
                 {/* Reasons */}
                 <div className="flex flex-wrap gap-2">
-                  {reasons.map((r) => (
-                    <span key={r} className="px-3 py-1 rounded-full text-xs text-indigo-300 border border-indigo-500/25"
+                  {T.contact.reasons.map((r) => (
+                    <span key={r.fr} className="px-3 py-1 rounded-full text-xs text-indigo-300 border border-indigo-500/25"
                       style={{ background: "rgba(99,102,241,0.1)" }}>
-                      {r}
+                      {tr(r, lang)}
                     </span>
                   ))}
                 </div>
@@ -212,7 +210,7 @@ export default function Contact() {
 
             {/* Socials */}
             <div className="flex items-center gap-3 pt-1">
-              <span className="text-xs text-slate-600 uppercase tracking-widest">Suivez-moi</span>
+              <span className="text-xs text-slate-600 uppercase tracking-widest">{tr(T.contact.follow, lang)}</span>
               <div className="flex-1 h-px bg-slate-800" />
               <div className="flex gap-2">
                 {socials.map(({ icon: Icon, label, href }) => (
@@ -270,8 +268,8 @@ export default function Contact() {
                       <FiCheck className="w-9 h-9 text-white" strokeWidth={2.5} />
                     </motion.div>
                     <div>
-                      <h3 className="text-2xl font-bold text-white mb-2">Message envoyé !</h3>
-                      <p className="text-slate-400 text-sm">Je vous répondrai dans les plus brefs délais.</p>
+                      <h3 className="text-2xl font-bold text-white mb-2">{tr(T.contact.sentTitle, lang)}</h3>
+                      <p className="text-slate-400 text-sm">{tr(T.contact.sentDesc, lang)}</p>
                     </div>
                   </motion.div>
                 ) : (
@@ -285,50 +283,50 @@ export default function Contact() {
                     className="space-y-5"
                   >
                     <div className="mb-6">
-                      <h3 className="text-xl font-bold text-white mb-1">Envoyez-moi un message</h3>
-                      <p className="text-slate-500 text-xs">Tous les champs marqués * sont obligatoires.</p>
+                      <h3 className="text-xl font-bold text-white mb-1">{tr(T.contact.sendMsg, lang)}</h3>
+                      <p className="text-slate-500 text-xs">{tr(T.contact.required, lang)}</p>
                     </div>
 
                     {/* Name + Email */}
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <Field label="Nom complet" error={errors.name?.message}>
+                      <Field label={tr(T.contact.name, lang)} error={errors.name?.message}>
                         <input
-                          {...register("name", { required: "Le nom est requis" })}
-                          placeholder="Donald Fambo"
+                          {...register("name", { required: tr(T.contact.errName, lang) })}
+                          placeholder={tr(T.contact.namePH, lang)}
                           className={inputClass(!!errors.name)}
                         />
                       </Field>
-                      <Field label="Email" error={errors.email?.message}>
+                      <Field label={tr(T.contact.email, lang)} error={errors.email?.message}>
                         <input
                           {...register("email", {
-                            required: "L'email est requis",
-                            pattern: { value: /^\S+@\S+\.\S+$/, message: "Email invalide" },
+                            required: tr(T.contact.errEmail, lang),
+                            pattern: { value: /^\S+@\S+\.\S+$/, message: tr(T.contact.errEmailInv, lang) },
                           })}
                           type="email"
-                          placeholder="vous@exemple.com"
+                          placeholder={tr(T.contact.emailPH, lang)}
                           className={inputClass(!!errors.email)}
                         />
                       </Field>
                     </div>
 
                     {/* Subject */}
-                    <Field label="Sujet" error={errors.subject?.message}>
+                    <Field label={tr(T.contact.subject, lang)} error={errors.subject?.message}>
                       <input
-                        {...register("subject", { required: "Le sujet est requis" })}
-                        placeholder="Développement d'une application web"
+                        {...register("subject", { required: tr(T.contact.errSubject, lang) })}
+                        placeholder={tr(T.contact.subjectPH, lang)}
                         className={inputClass(!!errors.subject)}
                       />
                     </Field>
 
                     {/* Message */}
-                    <Field label="Message" error={errors.message?.message}>
+                    <Field label={tr(T.contact.message, lang)} error={errors.message?.message}>
                       <textarea
                         {...register("message", {
-                          required: "Le message est requis",
-                          minLength: { value: 20, message: "Au moins 20 caractères" },
+                          required: tr(T.contact.errMessage, lang),
+                          minLength: { value: 20, message: tr(T.contact.errMinLen, lang) },
                         })}
                         rows={5}
-                        placeholder="Décrivez votre projet, vos besoins, votre budget et vos délais..."
+                        placeholder={tr(T.contact.messagePH, lang)}
                         className={`${inputClass(!!errors.message)} resize-none`}
                       />
                     </Field>
@@ -342,7 +340,6 @@ export default function Contact() {
                       className="relative w-full flex items-center justify-center gap-2.5 py-4 rounded-2xl font-semibold text-sm text-white overflow-hidden disabled:opacity-70 disabled:cursor-not-allowed"
                       style={{ background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 60%, #22d3ee 100%)" }}
                     >
-                      {/* Shine sweep */}
                       {!submitting && (
                         <motion.span
                           animate={{ x: ["-120%", "220%"] }}
@@ -353,12 +350,12 @@ export default function Contact() {
                       {submitting ? (
                         <>
                           <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                          Envoi en cours…
+                          {tr(T.contact.sending, lang)}
                         </>
                       ) : (
                         <>
                           <FiSend className="w-4 h-4" />
-                          Envoyer le message
+                          {tr(T.contact.send, lang)}
                         </>
                       )}
                     </motion.button>

@@ -5,6 +5,9 @@ import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Services from "@/components/sections/Services";
 import Projects from "@/components/sections/Projects";
+import Testimonials from "@/components/sections/Testimonials";
+import Blog from "@/components/sections/Blog";
+import GitHubStats from "@/components/sections/GitHubStats";
 import Contact from "@/components/sections/Contact";
 import BottomSection from "@/components/sections/BottomSection";
 import LoadingScreen from "@/components/ui/LoadingScreen";
@@ -22,6 +25,9 @@ export default function Home() {
         <Skills />
         <Services />
         <Projects />
+        <Testimonials />
+        <GitHubStats />
+        <Blog />
         <Contact />
         <BottomSection />
       </main>

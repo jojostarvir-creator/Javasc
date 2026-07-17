@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FiDownload, FiArrowRight, FiGithub, FiLinkedin } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
+import { useLang } from "@/context/LangContext";
+import { T, tr } from "@/data/translations";
 import {
   SiHtml5, SiCss, SiJavascript, SiTypescript,
   SiReact, SiNodedotjs, SiGit, SiTailwindcss,
@@ -29,9 +31,10 @@ const codeLines = [
 ];
 
 export default function Hero() {
+  const { lang } = useLang();
+
   return (
     <section id="hero" className="min-h-screen flex items-center pt-16 relative overflow-hidden">
-      {/* Subtle background orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-0 w-[500px] h-[500px] rounded-full bg-[#7b68ee]/8 blur-[120px]" />
         <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] rounded-full bg-indigo-500/6 blur-[100px]" />
@@ -46,21 +49,26 @@ export default function Hero() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#7b68ee]/30 bg-[#7b68ee]/10 mb-6">
               <span className="w-1.5 h-1.5 rounded-full bg-[#7b68ee] animate-pulse" />
-              <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">Développeur Web Full Stack</span>
+              <span className="text-[#7b68ee] text-xs font-semibold tracking-widest uppercase">
+                {tr(T.hero.badge, lang)}
+              </span>
             </div>
 
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4 text-white">
-              Salut, je suis{" "}
+              {tr(T.hero.greeting, lang)}{" "}
               <span className="bg-gradient-to-r from-[#7b68ee] to-indigo-400 bg-clip-text text-transparent">
                 Donald
               </span>
             </h1>
             <p className="text-xl text-slate-400 mb-2 font-medium">
-              Je construis des expériences web <span className="text-white">modernes</span> et <span className="text-white">performantes</span>.
+              {tr(T.hero.subtitle, lang)}{" "}
+              <span className="text-white">{tr(T.hero.modern, lang)}</span>{" "}
+              {tr(T.hero.and, lang)}{" "}
+              <span className="text-white">{tr(T.hero.performant, lang)}</span>.
             </p>
             <p className="text-sm text-slate-500 mb-8 leading-relaxed max-w-md">
-              Passionné par le code propre et les interfaces soignées. Disponible pour des projets freelance.
+              {tr(T.hero.desc, lang)}
             </p>
 
             {/* CTAs */}
@@ -71,7 +79,7 @@ export default function Hero() {
                 className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white"
                 style={{ background: "#7b68ee" }}
               >
-                Voir mes projets <FiArrowRight className="w-4 h-4" />
+                {tr(T.hero.viewProjects, lang)} <FiArrowRight className="w-4 h-4" />
               </motion.button>
               <motion.a
                 href="/cv"
@@ -80,16 +88,16 @@ export default function Hero() {
                 whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
                 className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-slate-300 border border-white/10 hover:border-[#7b68ee]/40 hover:text-white transition-all"
               >
-                <FiDownload className="w-4 h-4" /> Télécharger CV
+                <FiDownload className="w-4 h-4" /> {tr(T.hero.downloadCV, lang)}
               </motion.a>
             </div>
 
             {/* Socials */}
             <div className="flex items-center gap-3 mb-10">
               {[
-                { Icon: FiGithub,    href: "https://github.com/jojostarvir-creator" },
-                { Icon: FiLinkedin,  href: "https://www.linkedin.com/in/donald-dieudonn%C3%A9-fambo-sossa-4360843b2/" },
-                { Icon: FaWhatsapp,  href: "https://wa.me/2290156336282" },
+                { Icon: FiGithub,   href: "https://github.com/jojostarvir-creator" },
+                { Icon: FiLinkedin, href: "https://www.linkedin.com/in/donald-dieudonn%C3%A9-fambo-sossa-4360843b2/" },
+                { Icon: FaWhatsapp, href: "https://wa.me/2290156336282" },
               ].map(({ Icon, href }, i) => (
                 <motion.a key={i} href={href} target="_blank" rel="noopener noreferrer"
                   whileHover={{ scale: 1.12 }} whileTap={{ scale: 0.9 }}
@@ -101,7 +109,9 @@ export default function Hero() {
 
             {/* Tech icons */}
             <div>
-              <p className="text-[10px] font-semibold tracking-widest uppercase text-slate-600 mb-3">Technologies maîtrisées</p>
+              <p className="text-[10px] font-semibold tracking-widest uppercase text-slate-600 mb-3">
+                {tr(T.hero.tech, lang)}
+              </p>
               <div className="flex flex-wrap gap-3">
                 {techIcons.map(({ Icon, color, label }) => (
                   <motion.div key={label} whileHover={{ scale: 1.15, y: -2 }}
@@ -120,12 +130,9 @@ export default function Hero() {
           <motion.div initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.15 }}
             className="relative flex items-center justify-center">
 
-            {/* Circular photo */}
             <div className="relative">
-              {/* Glow */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#7b68ee] to-indigo-500 blur-3xl opacity-20 scale-110" />
 
-              {/* Gradient ring */}
               <div className="w-72 h-72 sm:w-80 sm:h-80 rounded-full p-[3px] bg-gradient-to-br from-[#7b68ee] via-indigo-500 to-purple-600">
                 <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 relative">
                   <Image
@@ -169,8 +176,8 @@ export default function Hero() {
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                 <div>
-                  <p className="text-white text-[11px] font-bold">Disponible</p>
-                  <p className="text-slate-500 text-[9px]">Freelance</p>
+                  <p className="text-white text-[11px] font-bold">{tr(T.hero.available, lang)}</p>
+                  <p className="text-slate-500 text-[9px]">{tr(T.hero.freelance, lang)}</p>
                 </div>
               </motion.div>
             </div>
