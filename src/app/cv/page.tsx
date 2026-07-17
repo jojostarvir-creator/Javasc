@@ -28,7 +28,7 @@ const experiences = [
       "Développement d'applications web & mobiles sur mesure pour des clients en Afrique et à l'international.",
       "Conception d'interfaces modernes avec React / Next.js et intégration de backends Node.js.",
       "Développement d'applications mobiles cross-platform avec Flutter.",
-      "Livraison de plus de 20 projets avec un taux de satisfaction de 99 %.",
+      "Livraison de 10+ projets avec un taux de satisfaction de 100 %.",
     ],
   },
   {
@@ -53,11 +53,6 @@ const projects = [
     title: "Décor Prestige",
     stack: "HTML5 · CSS3",
     desc: "Site vitrine pour une entreprise de décoration. Galerie produits, catalogue et formulaire de contact.",
-  },
-  {
-    title: "Dashboard SaaS Analytics",
-    stack: "Next.js · Node.js · PostgreSQL",
-    desc: "Plateforme analytics temps réel avec graphiques interactifs, gestion des rôles et export de données.",
   },
 ];
 
@@ -279,9 +274,9 @@ export default function CVPage() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-3 pt-2">
                 {[
-                  { val: "20+", label: "Projets livrés" },
+                  { val: "10+", label: "Projets livrés" },
                   { val: "3+",  label: "Ans d'expérience" },
-                  { val: "99%", label: "Satisfaction client" },
+                  { val: "100%", label: "Satisfaction client" },
                 ].map(({ val, label }) => (
                   <div key={label} className="text-center p-3 rounded-xl border border-slate-100 bg-slate-50">
                     <div className="text-xl font-black text-indigo-600 mb-0.5">{val}</div>

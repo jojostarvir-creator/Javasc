@@ -82,8 +82,9 @@ export default function Hero() {
                 {tr(T.hero.viewProjects, lang)} <FiArrowRight className="w-4 h-4" />
               </motion.button>
               <motion.a
-                href="/cv.pdf"
-                download="Donald-Fambo-CV.pdf"
+                href="/cv"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
                 className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-slate-300 border border-white/10 hover:border-[#7b68ee]/40 hover:text-white transition-all"
               >
