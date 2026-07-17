@@ -10,35 +10,44 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DevDonald — Développeur Web & Mobile Full Stack",
+  title: "DevDonald — Développeur Web & Mobile Full Stack | Bénin",
   description:
-    "Portfolio professionnel d'un Développeur Web & Mobile Full Stack. Spécialisé en React, Next.js, Node.js et Flutter. Disponible pour missions freelance et opportunités.",
+    "Donald Fambo — Développeur Web & Mobile Full Stack basé au Bénin, Afrique de l'Ouest. Spécialisé en React, Next.js, Node.js et Flutter. Disponible pour missions freelance.",
   keywords: [
-    "développeur web",
-    "développeur mobile",
-    "full stack",
-    "react",
-    "next.js",
-    "flutter",
-    "freelance",
-    "portfolio",
+    "développeur web Bénin",
+    "développeur mobile Bénin",
+    "Donald Fambo",
+    "DevDonald",
+    "développeur full stack Afrique",
+    "freelance développeur web",
+    "react next.js développeur",
+    "flutter développeur",
+    "création site web Bénin",
+    "application mobile Bénin",
   ],
-  authors: [{ name: "DevDonald" }],
+  authors: [{ name: "Donald Fambo", url: "https://javasc-ten.vercel.app" }],
+  creator: "Donald Fambo",
   openGraph: {
-    title: "DevDonald — Développeur Web & Mobile",
-    description: "Portfolio professionnel — Applications modernes, performantes et évolutives.",
+    title: "DevDonald — Développeur Web & Mobile Full Stack",
+    description: "Donald Fambo — Développeur Full Stack basé au Bénin. React, Next.js, Flutter, Node.js. Disponible pour vos projets.",
     type: "website",
     locale: "fr_FR",
+    url: "https://javasc-ten.vercel.app",
+    siteName: "DevDonald Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "DevDonald — Développeur Web & Mobile",
-    description: "Portfolio professionnel — Applications modernes, performantes et évolutives.",
+    title: "DevDonald — Développeur Web & Mobile Full Stack",
+    description: "Donald Fambo — Développeur Full Stack basé au Bénin. React, Next.js, Flutter, Node.js.",
+    creator: "@devdonald",
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true },
+    googleBot: { index: true, follow: true, "max-snippet": -1 },
+  },
+  alternates: {
+    canonical: "https://javasc-ten.vercel.app",
   },
 };
 

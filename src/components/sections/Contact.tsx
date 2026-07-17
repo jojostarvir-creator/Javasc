@@ -11,6 +11,7 @@ import {
 } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
+import Toast from "@/components/ui/Toast";
 
 interface FormData {
   name: string;
@@ -41,6 +42,7 @@ const reasons = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" } | null>(null);
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm<FormData>();
 
@@ -60,19 +62,20 @@ export default function Contact() {
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
       );
       setSubmitted(true);
+      setToast({ message: "Message envoyé ! Je vous répondrai très bientôt.", type: "success" });
       reset();
       setTimeout(() => setSubmitted(false), 6000);
     } catch (err: unknown) {
       const e = err as { status?: number; text?: string };
-      console.error("EmailJS error status:", e?.status);
-      console.error("EmailJS error text:", e?.text);
-      alert(`Erreur ${e?.status ?? ""}: ${e?.text ?? "inconnue"}`);
+      console.error("EmailJS error:", e?.status, e?.text);
+      setToast({ message: "Erreur lors de l'envoi. Contactez-moi directement par email.", type: "error" });
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
+    <>
     <section
       id="contact"
       className="relative py-24 lg:py-32 overflow-hidden"
@@ -368,6 +371,15 @@ export default function Contact() {
         </div>
       </div>
     </section>
+
+    {toast && (
+      <Toast
+        message={toast.message}
+        type={toast.type}
+        onClose={() => setToast(null)}
+      />
+    )}
+    </>
   );
 }
 
