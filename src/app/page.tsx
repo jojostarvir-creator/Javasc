@@ -11,10 +11,12 @@ import Contact from "@/components/sections/Contact";
 import BottomSection from "@/components/sections/BottomSection";
 import LoadingScreen from "@/components/ui/LoadingScreen";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 
 export default function Home() {
   return (
     <>
+      <ScrollProgress />
       <LoadingScreen />
       <WhatsAppFloat />
       <Navbar />
