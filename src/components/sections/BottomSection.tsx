@@ -105,10 +105,10 @@ export default function BottomSection() {
                 <FiMail className="w-4 h-4 text-[#7b68ee] flex-shrink-0" />
                 <span className="truncate">fambodonald110@gmail.com</span>
               </a>
-              <a href="tel:+22901563382"
+              <a href="tel:+2290156336282"
                 className="flex items-center gap-2.5 text-slate-400 hover:text-white transition-colors text-sm">
                 <FiPhone className="w-4 h-4 text-[#7b68ee] flex-shrink-0" />
-                +229 01 56 33 82
+                +229 01 56 33 62 82
               </a>
             </div>
           </motion.div>

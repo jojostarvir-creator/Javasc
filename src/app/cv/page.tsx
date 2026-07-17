@@ -94,8 +94,8 @@ export default function CVPage() {
                 <span className="flex items-center gap-1.5"><FiMail className="w-3.5 h-3.5" />fambodonald110@gmail.com</span>
                 <span className="flex items-center gap-1.5"><FiPhone className="w-3.5 h-3.5" />+229 01 56 33 62 82</span>
                 <span className="flex items-center gap-1.5"><FiMapPin className="w-3.5 h-3.5" />Bénin, Afrique de l&apos;Ouest</span>
-                <span className="flex items-center gap-1.5"><FiGithub className="w-3.5 h-3.5" />github.com/devdonald</span>
-                <span className="flex items-center gap-1.5"><FiLinkedin className="w-3.5 h-3.5" />linkedin.com/in/devdonald</span>
+                <span className="flex items-center gap-1.5"><FiGithub className="w-3.5 h-3.5" />github.com/jojostarvir-creator</span>
+                <span className="flex items-center gap-1.5"><FiLinkedin className="w-3.5 h-3.5" />linkedin.com/in/donald-fambo</span>
               </div>
             </div>
 
@@ -180,7 +180,7 @@ export default function CVPage() {
                     { icon: FiMail,   val: "fambodonald110@gmail.com" },
                     { icon: FiPhone,  val: "+229 01 56 33 62 82" },
                     { icon: FiMapPin, val: "Bénin, Afrique de l'Ouest" },
-                    { icon: FiGlobe,  val: "devdonald.com" },
+                    { icon: FiGlobe,  val: "javasc-ten.vercel.app" },
                   ].map(({ icon: Icon, val }) => (
                     <li key={val} className="flex items-start gap-2 text-xs text-slate-600">
                       <Icon className="w-3 h-3 text-indigo-500 mt-0.5 flex-shrink-0" />
