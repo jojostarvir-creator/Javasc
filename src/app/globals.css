@@ -56,9 +56,6 @@ body {
 .light .text-slate-500 { color: #64748b !important; }
 .light .text-slate-300 { color: #334155 !important; }
 .light .text-white     { color: #0f172a !important; }
-.light .bg-\[#0d0d1f\],
-.light .bg-\[#080818\],
-.light .bg-\[#050a18\] { background: var(--bg) !important; }
 .light header { background: rgba(241,245,249,0.95) !important; }
 .light footer { background: #e2e8f0 !important; }
 
