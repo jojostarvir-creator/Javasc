@@ -45,14 +45,28 @@ const experiences = [
 
 const projects = [
   {
+    title: "Clean Food",
+    stack: "HTML5 · CSS3 · JavaScript",
+    desc: "Site vitrine pour un restaurant africain à Abidjan — menu, galerie, réservations et témoignages clients.",
+    url: "momoazahaf709-lab.github.io/Cleanfood",
+  },
+  {
+    title: "Portfolio Laurent Fagnihoun",
+    stack: "HTML5 · CSS3 · JavaScript",
+    desc: "Portfolio professionnel développé pour un client développeur web — compétences, projets et contact.",
+    url: "momoazahaf709-lab.github.io/toutnouveau",
+  },
+  {
     title: "Akili",
     stack: "React · JavaScript · CSS",
-    desc: "Application web moderne avec interface intuitive, composants réutilisables et design responsive.",
+    desc: "Application web avec interface intuitive, composants réutilisables et design responsive.",
+    url: "",
   },
   {
     title: "Décor Prestige",
     stack: "HTML5 · CSS3",
-    desc: "Site vitrine pour une entreprise de décoration. Galerie produits, catalogue et formulaire de contact.",
+    desc: "Site vitrine pour une entreprise de décoration intérieure — galerie produits et formulaire de devis.",
+    url: "",
   },
 ];
 
@@ -237,6 +251,9 @@ export default function CVPage() {
                         </span>
                       </div>
                       <p className="text-xs text-slate-500 leading-relaxed">{p.desc}</p>
+                      {p.url && (
+                        <p className="text-[10px] text-indigo-400 mt-1">{p.url}</p>
+                      )}
                     </div>
                   ))}
                 </div>
