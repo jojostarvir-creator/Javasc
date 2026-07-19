@@ -7,12 +7,22 @@ import { projects } from "@/data/projects";
 import type { Project } from "@/data/projects";
 import { useLang } from "@/context/LangContext";
 import { T, tr } from "@/data/translations";
-import { FiMaximize2 } from "react-icons/fi";
+import { FiMaximize2, FiPlay } from "react-icons/fi";
 import ProjectModal from "@/components/ui/ProjectModal";
+import LivePreviewModal from "@/components/ui/LivePreviewModal";
 
 export default function Projects() {
   const { lang } = useLang();
   const [selected, setSelected] = useState<Project | null>(null);
+  const [preview, setPreview] = useState<Project | null>(null);
+
+  const handleCardClick = (project: Project) => {
+    if (project.live && project.live !== "#") {
+      setPreview(project);
+    } else {
+      setSelected(project);
+    }
+  };
 
   return (
     <>
@@ -48,7 +58,7 @@ export default function Projects() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
-                onClick={() => setSelected(project)}
+                onClick={() => handleCardClick(project)}
                 className="group relative flex flex-col rounded-2xl border border-white/6 bg-white/2 hover:border-[#7b68ee]/30 hover:bg-[#7b68ee]/4 transition-all duration-300 overflow-hidden cursor-pointer"
               >
                 {/* Number badge */}
@@ -58,11 +68,14 @@ export default function Projects() {
                   </span>
                 </div>
 
-                {/* Expand icon */}
+                {/* Action icon */}
                 <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="w-7 h-7 rounded-lg flex items-center justify-center border border-white/20"
                     style={{ background: "rgba(123,104,238,0.2)" }}>
-                    <FiMaximize2 className="w-3.5 h-3.5 text-[#7b68ee]" />
+                    {project.live !== "#"
+                      ? <FiPlay className="w-3.5 h-3.5 text-[#7b68ee]" />
+                      : <FiMaximize2 className="w-3.5 h-3.5 text-[#7b68ee]" />
+                    }
                   </div>
                 </div>
 
@@ -139,6 +152,7 @@ export default function Projects() {
       </section>
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />
+      <LivePreviewModal project={preview} onClose={() => setPreview(null)} />
     </>
   );
 }
