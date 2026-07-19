@@ -66,17 +66,38 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Preview image */}
-                <div className="h-52 relative overflow-hidden border-b border-white/5 bg-slate-900">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    unoptimized={project.image.endsWith(".svg")}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent" />
+                {/* Browser mockup */}
+                <div className="border-b border-white/5 bg-[#0d0f1a]">
+                  {/* Browser chrome */}
+                  <div className="flex items-center gap-3 px-3 py-2 border-b border-white/5"
+                    style={{ background: "#1a1d2e" }}>
+                    {/* Traffic lights */}
+                    <div className="flex gap-1.5 flex-shrink-0">
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f57" }} />
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
+                      <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
+                    </div>
+                    {/* URL bar */}
+                    <div className="flex-1 flex items-center gap-1.5 px-2.5 py-1 rounded-md text-[10px] text-slate-500 truncate"
+                      style={{ background: "#0d0f1a" }}>
+                      <svg className="w-2.5 h-2.5 flex-shrink-0 text-slate-600" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+                      </svg>
+                      {project.url}
+                    </div>
+                  </div>
+                  {/* Screenshot */}
+                  <div className="h-44 relative overflow-hidden">
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                      unoptimized={project.image.endsWith(".svg")}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f1a]/60 to-transparent" />
+                  </div>
                 </div>
 
                 {/* Content */}

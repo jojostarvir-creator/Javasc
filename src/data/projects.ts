@@ -4,6 +4,7 @@ export interface Project {
   description: { fr: string; en: string };
   longDescription: { fr: string; en: string };
   image: string;
+  url: string;
   stack: string[];
   features: { fr: string; en: string }[];
   github: string;
@@ -25,6 +26,7 @@ export const projects: Project[] = [
       en: "Akili is a React web application focused on a clean user interface and reusable components. The project showcases smooth navigation, a responsive design adapted to all screens, and a modular component architecture that simplifies maintenance.",
     },
     image: "/projects/akili.png",
+    url: "akili-app.vercel.app",
     stack: ["React", "JavaScript", "CSS"],
     features: [
       { fr: "UI responsive tous écrans",       en: "Responsive UI for all screens"    },
@@ -48,6 +50,7 @@ export const projects: Project[] = [
       en: "Décor Prestige is a showcase website created for an interior decoration company. It features a gallery of completed projects, a detailed service catalogue, and a quote request form. The elegant design reflects the brand's premium visual identity.",
     },
     image: "/projects/decor.png",
+    url: "decor-prestige.netlify.app",
     stack: ["HTML5", "CSS3"],
     features: [
       { fr: "Galerie produits interactive",    en: "Interactive product gallery"       },
