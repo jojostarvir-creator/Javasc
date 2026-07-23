@@ -45,6 +45,12 @@ const experiences = [
 
 const projects = [
   {
+    title: "Houndjo",
+    stack: "Next.js · React · JavaScript",
+    desc: "E-commerce de parfums, muscs et huiles parfumées fabriqués au Bénin. Catalogue produits, galerie et contact.",
+    url: "muskhoundjo.vercel.app",
+  },
+  {
     title: "Clean Food",
     stack: "HTML5 · CSS3 · JavaScript",
     desc: "Site vitrine pour un restaurant africain à Abidjan — menu, galerie, réservations et témoignages clients.",
@@ -55,18 +61,6 @@ const projects = [
     stack: "HTML5 · CSS3 · JavaScript",
     desc: "Portfolio professionnel développé pour un client développeur web — compétences, projets et contact.",
     url: "momoazahaf709-lab.github.io/toutnouveau",
-  },
-  {
-    title: "Akili",
-    stack: "React · JavaScript · CSS",
-    desc: "Application web avec interface intuitive, composants réutilisables et design responsive.",
-    url: "",
-  },
-  {
-    title: "Décor Prestige",
-    stack: "HTML5 · CSS3",
-    desc: "Site vitrine pour une entreprise de décoration intérieure — galerie produits et formulaire de devis.",
-    url: "",
   },
 ];
 
