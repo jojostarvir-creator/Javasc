@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1a0c"/>
+      <stop offset="100%" style="stop-color:#1a2a10"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e2e18"/>
+      <stop offset="100%" style="stop-color:#162212"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e8650a"/>
+      <stop offset="100%" style="stop-color:#f59332"/>
+    </linearGradient>
+    <filter id="softblur">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Glow -->
+  <ellipse cx="400" cy="180" rx="300" ry="160" fill="#e8650a" opacity="0.05" filter="url(#softblur)"/>
+  <ellipse cx="150" cy="350" rx="150" ry="100" fill="#4a9a2a" opacity="0.06" filter="url(#softblur)"/>
+
+  <!-- Nav bar -->
+  <rect x="0" y="0" width="800" height="46" fill="#0a1208" opacity="0.95"/>
+  <circle cx="32" cy="23" r="14" fill="#e8650a" opacity="0.9"/>
+  <text x="32" y="28" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" text-anchor="middle">CF</text>
+  <text x="56" y="19" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white" letter-spacing="1">CLEAN FOOD</text>
+  <text x="56" y="32" font-family="Arial, sans-serif" font-size="7" fill="#7ab84a" letter-spacing="2">RESTAURANT AFRICAIN</text>
+  <text x="250" y="28" font-family="Arial, sans-serif" font-size="9" fill="#8aaa6a" opacity="0.8">Accueil</text>
+  <text x="310" y="28" font-family="Arial, sans-serif" font-size="9" fill="#8aaa6a" opacity="0.8">Menu</text>
+  <text x="360" y="28" font-family="Arial, sans-serif" font-size="9" fill="#8aaa6a" opacity="0.8">Galerie</text>
+  <text x="415" y="28" font-family="Arial, sans-serif" font-size="9" fill="#8aaa6a" opacity="0.8">Réservation</text>
+  <text x="490" y="28" font-family="Arial, sans-serif" font-size="9" fill="#8aaa6a" opacity="0.8">Avis</text>
+  <rect x="680" y="13" width="100" height="20" rx="10" fill="url(#orange)"/>
+  <text x="730" y="27" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle" letter-spacing="0.5">RÉSERVER</text>
+  <line x1="0" y1="46" x2="800" y2="46" stroke="#e8650a" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- Hero badge -->
+  <rect x="280" y="64" width="240" height="20" rx="10" fill="#e8650a" opacity="0.15" stroke="#e8650a" stroke-width="0.8" opacity2="0.4"/>
+  <text x="400" y="78" font-family="Arial, sans-serif" font-size="9" fill="#f59332" text-anchor="middle" letter-spacing="1.5">🍽  ABIDJAN · CÔTE D'IVOIRE</text>
+
+  <!-- Main headline -->
+  <text x="400" y="135" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="bold" fill="white" text-anchor="middle">Saveurs</text>
+  <text x="400" y="182" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-style="italic" fill="#e8650a" text-anchor="middle">authentiques</text>
+  <text x="400" y="229" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="bold" fill="white" text-anchor="middle">d'Afrique</text>
+
+  <!-- Subtitle -->
+  <text x="400" y="265" font-family="Arial, sans-serif" font-size="11" fill="#7ab84a" text-anchor="middle">Poulet DG · Attieké · Jus Bissap · Plats traditionnels</text>
+
+  <!-- Menu cards row -->
+  <g transform="translate(100, 295)">
+    <!-- Card 1 -->
+    <rect x="0" y="0" width="130" height="90" rx="10" fill="url(#card)" stroke="#e8650a" stroke-width="0.6" opacity="0.8"/>
+    <text x="65" y="22" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">🍗</text>
+    <text x="65" y="45" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Poulet DG</text>
+    <text x="65" y="60" font-family="Arial, sans-serif" font-size="7.5" fill="#7ab84a" text-anchor="middle">Plat signature</text>
+    <text x="65" y="76" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e8650a" text-anchor="middle">3 500 F</text>
+    <!-- Card 2 -->
+    <rect x="145" y="0" width="130" height="90" rx="10" fill="url(#card)" stroke="#4a9a2a" stroke-width="0.6" opacity="0.8"/>
+    <text x="210" y="22" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">🌿</text>
+    <text x="210" y="45" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Attieké Poisson</text>
+    <text x="210" y="60" font-family="Arial, sans-serif" font-size="7.5" fill="#7ab84a" text-anchor="middle">Spécialité ivoirienne</text>
+    <text x="210" y="76" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e8650a" text-anchor="middle">2 800 F</text>
+    <!-- Card 3 -->
+    <rect x="290" y="0" width="130" height="90" rx="10" fill="url(#card)" stroke="#e8650a" stroke-width="0.6" opacity="0.8"/>
+    <text x="355" y="22" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">🥤</text>
+    <text x="355" y="45" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Jus Bissap</text>
+    <text x="355" y="60" font-family="Arial, sans-serif" font-size="7.5" fill="#7ab84a" text-anchor="middle">Boisson traditionnelle</text>
+    <text x="355" y="76" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e8650a" text-anchor="middle">800 F</text>
+    <!-- Card 4 -->
+    <rect x="435" y="0" width="130" height="90" rx="10" fill="url(#card)" stroke="#4a9a2a" stroke-width="0.6" opacity="0.8"/>
+    <text x="500" y="22" font-family="Arial, sans-serif" font-size="20" text-anchor="middle">🍲</text>
+    <text x="500" y="45" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Thiéboudienne</text>
+    <text x="500" y="60" font-family="Arial, sans-serif" font-size="7.5" fill="#7ab84a" text-anchor="middle">Riz au poisson</text>
+    <text x="500" y="76" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="#e8650a" text-anchor="middle">3 200 F</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="415" width="800" height="35" fill="#0a1208" opacity="0.9"/>
+  <text x="400" y="436" font-family="monospace" font-size="9" fill="#4a7a2a" text-anchor="middle" opacity="0.7">momoazahaf709-lab.github.io/Cleanfood</text>
+</svg>

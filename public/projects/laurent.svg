@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060b14"/>
+      <stop offset="100%" style="stop-color:#0d1625"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1e36"/>
+      <stop offset="100%" style="stop-color:#0a1428"/>
+    </linearGradient>
+    <filter id="softblur">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bg)"/>
+
+  <!-- Glow blobs -->
+  <ellipse cx="180" cy="200" rx="200" ry="160" fill="#3b82f6" opacity="0.05" filter="url(#softblur)"/>
+  <ellipse cx="620" cy="250" rx="200" ry="150" fill="#8b5cf6" opacity="0.05" filter="url(#softblur)"/>
+
+  <!-- Nav bar -->
+  <rect x="0" y="0" width="800" height="46" fill="#060b14" opacity="0.95"/>
+  <!-- Logo LF -->
+  <rect x="18" y="10" width="36" height="26" rx="6" fill="url(#accent)" opacity="0.9"/>
+  <text x="36" y="28" font-family="Georgia, serif" font-size="13" font-weight="bold" fill="white" text-anchor="middle">LF</text>
+  <text x="64" y="20" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="white" letter-spacing="0.5">Laurent Fagnihoun</text>
+  <text x="64" y="33" font-family="Arial, sans-serif" font-size="7" fill="#3b82f6" letter-spacing="2">DÉVELOPPEUR WEB</text>
+  <text x="310" y="27" font-family="Arial, sans-serif" font-size="9" fill="#4a6a9a" opacity="0.8">Accueil</text>
+  <text x="365" y="27" font-family="Arial, sans-serif" font-size="9" fill="#4a6a9a" opacity="0.8">À propos</text>
+  <text x="430" y="27" font-family="Arial, sans-serif" font-size="9" fill="#4a6a9a" opacity="0.8">Projets</text>
+  <text x="488" y="27" font-family="Arial, sans-serif" font-size="9" fill="#4a6a9a" opacity="0.8">Contact</text>
+  <rect x="680" y="13" width="90" height="20" rx="10" fill="url(#accent)" opacity="0.8"/>
+  <text x="725" y="27" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">Me contacter</text>
+  <rect x="0" y="46" width="800" height="1" fill="url(#accent)" opacity="0.2"/>
+
+  <!-- Left — Avatar placeholder -->
+  <g transform="translate(160, 120)">
+    <!-- Outer ring -->
+    <circle cx="0" cy="0" r="68" fill="none" stroke="url(#accent)" stroke-width="1.5" opacity="0.4" stroke-dasharray="6 3"/>
+    <!-- Avatar circle -->
+    <circle cx="0" cy="0" r="58" fill="url(#card)" stroke="#3b82f6" stroke-width="1.5" opacity="0.8"/>
+    <!-- Initials -->
+    <text x="0" y="8" font-family="Georgia, serif" font-size="32" font-weight="bold" fill="url(#accent)" text-anchor="middle" opacity="0.9">LF</text>
+    <!-- Available badge -->
+    <circle cx="42" cy="42" r="12" fill="#060b14" stroke="#3b82f6" stroke-width="1"/>
+    <circle cx="42" cy="42" r="5" fill="#22c55e"/>
+  </g>
+
+  <!-- Skills pills left column -->
+  <g transform="translate(60, 225)">
+    <rect x="0" y="0" width="85" height="18" rx="9" fill="#3b82f620" stroke="#3b82f650" stroke-width="1"/>
+    <text x="42" y="13" font-family="monospace" font-size="8" fill="#3b82f6" text-anchor="middle">React</text>
+    <rect x="0" y="26" width="85" height="18" rx="9" fill="#8b5cf620" stroke="#8b5cf650" stroke-width="1"/>
+    <text x="42" y="39" font-family="monospace" font-size="8" fill="#8b5cf6" text-anchor="middle">PHP / Laravel</text>
+    <rect x="0" y="52" width="85" height="18" rx="9" fill="#3b82f620" stroke="#3b82f650" stroke-width="1"/>
+    <text x="42" y="65" font-family="monospace" font-size="8" fill="#3b82f6" text-anchor="middle">JavaScript</text>
+    <rect x="0" y="78" width="85" height="18" rx="9" fill="#06b6d420" stroke="#06b6d450" stroke-width="1"/>
+    <text x="42" y="91" font-family="monospace" font-size="8" fill="#06b6d4" text-anchor="middle">MySQL</text>
+  </g>
+
+  <!-- Right side — Main content -->
+  <text x="470" y="110" font-family="Arial, sans-serif" font-size="11" fill="#3b82f6" letter-spacing="2">👋  BONJOUR, JE SUIS</text>
+  <text x="470" y="155" font-family="Georgia, serif" font-size="36" font-weight="bold" fill="white">Laurent</text>
+  <text x="470" y="200" font-family="Georgia, serif" font-size="36" font-style="italic" fill="url(#accent)">Fagnihoun</text>
+  <text x="470" y="234" font-family="Arial, sans-serif" font-size="11" fill="#4a6a9a">Développeur Web Full Stack · Bénin</text>
+
+  <!-- Divider -->
+  <line x1="470" y1="250" x2="740" y2="250" stroke="url(#accent)" stroke-width="0.8" opacity="0.3"/>
+
+  <!-- Project cards mini -->
+  <g transform="translate(470, 265)">
+    <rect x="0" y="0" width="125" height="70" rx="8" fill="url(#card)" stroke="#3b82f650" stroke-width="1"/>
+    <text x="10" y="20" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">E-Commerce</text>
+    <text x="10" y="34" font-family="Arial, sans-serif" font-size="7" fill="#4a6a9a">Boutique en ligne</text>
+    <rect x="10" y="44" width="40" height="12" rx="6" fill="#3b82f620" stroke="#3b82f640" stroke-width="1"/>
+    <text x="30" y="53.5" font-family="monospace" font-size="6.5" fill="#3b82f6" text-anchor="middle">React</text>
+    <rect x="55" y="44" width="40" height="12" rx="6" fill="#8b5cf620" stroke="#8b5cf640" stroke-width="1"/>
+    <text x="75" y="53.5" font-family="monospace" font-size="6.5" fill="#8b5cf6" text-anchor="middle">Laravel</text>
+
+    <rect x="140" y="0" width="125" height="70" rx="8" fill="url(#card)" stroke="#8b5cf650" stroke-width="1"/>
+    <text x="150" y="20" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white">Portfolio Client</text>
+    <text x="150" y="34" font-family="Arial, sans-serif" font-size="7" fill="#4a6a9a">Site vitrine professionnel</text>
+    <rect x="150" y="44" width="40" height="12" rx="6" fill="#06b6d420" stroke="#06b6d440" stroke-width="1"/>
+    <text x="170" y="53.5" font-family="monospace" font-size="6.5" fill="#06b6d4" text-anchor="middle">HTML/CSS</text>
+    <rect x="195" y="44" width="40" height="12" rx="6" fill="#3b82f620" stroke="#3b82f640" stroke-width="1"/>
+    <text x="215" y="53.5" font-family="monospace" font-size="6.5" fill="#3b82f6" text-anchor="middle">JS</text>
+  </g>
+
+  <!-- CTA buttons -->
+  <rect x="470" y="350" width="120" height="30" rx="15" fill="url(#accent)" opacity="0.9"/>
+  <text x="530" y="369" font-family="Arial, sans-serif" font-size="9" font-weight="bold" fill="white" text-anchor="middle">Voir mes projets</text>
+  <rect x="603" y="350" width="120" height="30" rx="15" fill="none" stroke="#3b82f6" stroke-width="1" opacity="0.6"/>
+  <text x="663" y="369" font-family="Arial, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">Me contacter</text>
+
+  <!-- Bottom bar -->
+  <rect x="0" y="415" width="800" height="35" fill="#060b14" opacity="0.9"/>
+  <text x="400" y="436" font-family="monospace" font-size="9" fill="#3b82f6" text-anchor="middle" opacity="0.5">momoazahaf709-lab.github.io/toutnouveau</text>
+</svg>

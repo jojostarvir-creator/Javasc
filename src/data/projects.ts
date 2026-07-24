@@ -25,7 +25,7 @@ export const projects: Project[] = [
       fr: "Houndjo est une boutique en ligne spécialisée dans la vente de parfums premium, muscs et huiles parfumées fabriqués localement au Bénin. Le site propose une interface e-commerce moderne avec catalogue de produits, galerie visuelle, système de commande et page de contact. Développé avec Next.js pour des performances optimales.",
       en: "Houndjo is an online store specializing in premium perfumes, musks and scented oils locally manufactured in Benin. The site features a modern e-commerce interface with product catalogue, visual gallery, ordering system and contact page. Built with Next.js for optimal performance.",
     },
-    image: "/projects/ecommerce.svg",
+    image: "/projects/houndjo.svg",
     url: "muskhoundjo.vercel.app",
     stack: ["Next.js", "React", "JavaScript", "CSS"],
     features: [
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       fr: "Clean Food est le site vitrine d'un restaurant africain basé à Abidjan, Côte d'Ivoire. Le site présente le menu complet avec les plats signatures (Poulet DG, jus Bissap…), une galerie visuelle de la cuisine et de l'ambiance, un système de réservation, les horaires d'ouverture et les témoignages de clients satisfaits.",
       en: "Clean Food is the showcase website of an African restaurant based in Abidjan, Côte d'Ivoire. The site features the full menu with signature dishes (Chicken DG, Bissap juice…), a visual gallery of food and ambiance, a reservation system, opening hours, and customer reviews.",
     },
-    image: "/projects/real-estate.svg",
+    image: "/projects/cleanfood.svg",
     url: "momoazahaf709-lab.github.io/Cleanfood",
     stack: ["HTML5", "CSS3", "JavaScript"],
     features: [
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       fr: "Site portfolio conçu et développé pour Laurent Fagnihoun, développeur web basé au Bénin. Le site présente ses compétences techniques (e-commerce, front-end, back-end avec PHP/Laravel), ses projets réalisés et un formulaire de contact. Design moderne et responsive adapté à tous les appareils.",
       en: "Portfolio website designed and developed for Laurent Fagnihoun, a web developer based in Benin. The site showcases his technical skills (e-commerce, front-end, back-end with PHP/Laravel), completed projects, and a contact form. Modern responsive design for all devices.",
     },
-    image: "/projects/dashboard.svg",
+    image: "/projects/laurent.svg",
     url: "momoazahaf709-lab.github.io/toutnouveau",
     stack: ["HTML5", "CSS3", "JavaScript"],
     features: [
