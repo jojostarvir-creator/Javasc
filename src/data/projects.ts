@@ -66,6 +66,31 @@ export const projects: Project[] = [
   },
   {
     id: 3,
+    title: "Cocon Restaurant",
+    description: {
+      fr: "Site vitrine pour un restaurant gastronomique africain — menu, ambiance raffinée et réservations en ligne.",
+      en: "Showcase website for an African gastronomic restaurant — menu, refined ambiance and online reservations.",
+    },
+    longDescription: {
+      fr: "Cocon est le site vitrine d'un restaurant de haute gastronomie africaine. Il propose un design sombre et élégant avec une typographie premium, un menu complet (plats, boissons, galerie), un système de réservation de table en ligne, une section avis clients, et une fonctionnalité innovante de Sommelier IA pour accompagner les clients dans leurs choix. Déployé sur Vercel.",
+      en: "Cocon is the showcase website of a high-end African gastronomic restaurant. It features a dark, elegant design with premium typography, a full menu (dishes, drinks, gallery), an online table reservation system, a customer reviews section, and an innovative AI Sommelier feature to guide guests in their choices. Deployed on Vercel.",
+    },
+    image: "/projects/cocon.svg",
+    url: "cocon-restaurant.vercel.app",
+    stack: ["React", "Next.js", "Tailwind CSS", "Vercel"],
+    features: [
+      { fr: "Sommelier IA pour conseiller les clients",  en: "AI Sommelier to guide guests"         },
+      { fr: "Réservation de table en ligne",             en: "Online table reservation system"      },
+      { fr: "Menu complet — plats, boissons, galerie",   en: "Full menu — dishes, drinks, gallery"  },
+      { fr: "Design premium sombre & élégant",           en: "Premium dark & elegant design"        },
+    ],
+    github: "#",
+    live: "https://cocon-restaurant.vercel.app/",
+    category: "web",
+    year: "2025",
+  },
+  {
+    id: 4,
     title: "Portfolio Laurent Fagnihoun",
     description: {
       fr: "Portfolio professionnel conçu pour un développeur web — compétences, projets et formulaire de contact.",

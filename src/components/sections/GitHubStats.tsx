@@ -21,6 +21,8 @@ interface GitHubRepo {
 }
 
 const USERNAME = "jojostarvir-creator";
+const CACHE_KEY = "gh_stats_cache";
+const CACHE_TTL = 1000 * 60 * 30; // 30 minutes
 
 export default function GitHubStats() {
   const { lang } = useLang();
@@ -32,6 +34,16 @@ export default function GitHubStats() {
   useEffect(() => {
     const load = async () => {
       try {
+        const cached = localStorage.getItem(CACHE_KEY);
+        if (cached) {
+          const { data, ts } = JSON.parse(cached);
+          if (Date.now() - ts < CACHE_TTL) {
+            setUser(data.user);
+            setStars(data.stars);
+            setLoading(false);
+            return;
+          }
+        }
         const [uRes, rRes] = await Promise.all([
           fetch(`https://api.github.com/users/${USERNAME}`),
           fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100`),
@@ -44,6 +56,7 @@ export default function GitHubStats() {
           .reduce((acc, r) => acc + r.stargazers_count, 0);
         setUser(uData);
         setStars(totalStars);
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data: { user: uData, stars: totalStars }, ts: Date.now() }));
       } catch {
         setError(true);
       } finally {

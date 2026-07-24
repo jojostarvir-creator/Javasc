@@ -7,7 +7,7 @@ export default function LoadingScreen() {
   const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const t = setTimeout(() => setVisible(false), 1800);
+    const t = setTimeout(() => setVisible(false), 700);
     return () => clearTimeout(t);
   }, []);
 
@@ -38,7 +38,7 @@ export default function LoadingScreen() {
               <motion.div
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                transition={{ duration: 0.6, ease: "easeInOut" }}
                 className="h-full rounded-full"
                 style={{ background: "linear-gradient(90deg, #7b68ee, #a78bfa)" }}
               />
