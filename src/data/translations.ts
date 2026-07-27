@@ -9,7 +9,6 @@ export const T = {
     skills:   { fr: "Skills",   en: "Skills"   },
     projects: { fr: "Projets",  en: "Projects" },
     contact:  { fr: "Contact",  en: "Contact"  },
-    hire:     { fr: "Hire Me",  en: "Hire Me"  },
   },
   hero: {
     badge:        { fr: "Développeur Web Full Stack",         en: "Full Stack Web Developer"          },

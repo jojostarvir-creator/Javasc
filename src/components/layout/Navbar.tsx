@@ -5,7 +5,7 @@ import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
-import { FiArrowUpRight, FiSun, FiMoon } from "react-icons/fi";
+import { FiSun, FiMoon } from "react-icons/fi";
 import { useLang } from "@/context/LangContext";
 import { T, tr } from "@/data/translations";
 
@@ -75,39 +75,29 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA */}
-          <div className="flex items-center gap-3">
+          {/* Actions */}
+          <div className="flex items-center gap-2">
             {/* Lang toggle */}
             {mounted && (
-              <motion.button
-                whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+              <button
                 onClick={toggleLang}
-                className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-[#7b68ee]/40 transition-all text-xs font-bold"
+                className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 transition-colors text-xs font-bold"
               >
                 {lang === "fr" ? "EN" : "FR"}
-              </motion.button>
+              </button>
             )}
             {/* Theme toggle */}
             {mounted && (
-              <motion.button
-                whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}
+              <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-[#7b68ee]/40 transition-all"
+                className="w-9 h-9 rounded-lg border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:border-white/20 transition-colors"
               >
                 {theme === "dark"
                   ? <FiSun className="w-4 h-4" />
                   : <FiMoon className="w-4 h-4" />
                 }
-              </motion.button>
+              </button>
             )}
-            <motion.button
-              whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-              onClick={() => go("/contact")}
-              className="hidden sm:flex items-center gap-1.5 px-5 py-2 rounded-lg text-sm font-semibold text-white"
-              style={{ background: "#7b68ee" }}
-            >
-              {tr(T.nav.hire, lang)} <FiArrowUpRight className="w-3.5 h-3.5" />
-            </motion.button>
             <button onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-white/5">
               {mobileOpen ? <HiXMark className="w-5 h-5" /> : <HiBars3 className="w-5 h-5" />}
@@ -132,11 +122,6 @@ export default function Navbar() {
                   {l.label}
                 </button>
               ))}
-              <button onClick={() => go("/contact")}
-                className="mt-2 py-3 rounded-xl text-sm font-semibold text-white text-center"
-                style={{ background: "#7b68ee" }}>
-                {tr(T.nav.hire, lang)}
-              </button>
             </div>
           </motion.div>
         )}
