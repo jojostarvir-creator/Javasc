@@ -15,11 +15,6 @@ interface GitHubUser {
   avatar_url: string;
 }
 
-interface GitHubRepo {
-  stargazers_count: number;
-  fork: boolean;
-}
-
 const USERNAME = "jojostarvir-creator";
 const CACHE_KEY = "gh_stats_cache";
 const CACHE_TTL = 1000 * 60 * 30; // 30 minutes
@@ -44,19 +39,12 @@ export default function GitHubStats() {
             return;
           }
         }
-        const [uRes, rRes] = await Promise.all([
-          fetch(`https://api.github.com/users/${USERNAME}`),
-          fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100`),
-        ]);
-        if (!uRes.ok) throw new Error("API error");
-        const uData: GitHubUser = await uRes.json();
-        const rData: GitHubRepo[] = await rRes.json();
-        const totalStars = rData
-          .filter((r) => !r.fork)
-          .reduce((acc, r) => acc + r.stargazers_count, 0);
-        setUser(uData);
-        setStars(totalStars);
-        localStorage.setItem(CACHE_KEY, JSON.stringify({ data: { user: uData, stars: totalStars }, ts: Date.now() }));
+        const res = await fetch("/api/github-stats");
+        if (!res.ok) throw new Error("API error");
+        const data: { user: GitHubUser; stars: number } = await res.json();
+        setUser(data.user);
+        setStars(data.stars);
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ data, ts: Date.now() }));
       } catch {
         setError(true);
       } finally {
