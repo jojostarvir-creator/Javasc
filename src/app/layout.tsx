@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://donald-fambo.vercel.app"),
   title: "DevDonald — Développeur Web & Mobile Full Stack | Bénin",
   description:
     "Donald Fambo — Développeur Web & Mobile Full Stack basé au Bénin, Afrique de l'Ouest. Spécialisé en React, Next.js, Node.js et Flutter. Disponible pour missions freelance.",

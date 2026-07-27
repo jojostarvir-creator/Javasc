@@ -6,7 +6,6 @@ import About from "@/components/sections/About";
 import Skills from "@/components/sections/Skills";
 import Services from "@/components/sections/Services";
 import Projects from "@/components/sections/Projects";
-import LoadingScreen from "@/components/ui/LoadingScreen";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 
@@ -19,7 +18,6 @@ export default function Home() {
   return (
     <>
       <ScrollProgress />
-      <LoadingScreen />
       <WhatsAppFloat />
       <Navbar />
       <main>
