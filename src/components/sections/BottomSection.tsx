@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { FiArrowRight, FiGithub, FiLinkedin, FiMail, FiPhone } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { useLang } from "@/context/LangContext";
@@ -13,6 +14,7 @@ const socials = [
 
 export default function BottomSection() {
   const { lang } = useLang();
+  const router = useRouter();
 
   return (
     <section className="py-24 border-t border-white/5">
@@ -42,7 +44,7 @@ export default function BottomSection() {
             </div>
             <motion.button
               whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => router.push("/contact")}
               className="mt-6 flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white self-start"
               style={{ background: "#7b68ee" }}
             >

@@ -11,7 +11,6 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const Testimonials  = dynamic(() => import("@/components/sections/Testimonials"));
 const GitHubStats   = dynamic(() => import("@/components/sections/GitHubStats"));
-const Contact       = dynamic(() => import("@/components/sections/Contact"));
 const BottomSection = dynamic(() => import("@/components/sections/BottomSection"));
 
 export default function Home() {
@@ -28,7 +27,6 @@ export default function Home() {
         <Projects />
         <Testimonials />
         <GitHubStats />
-        <Contact />
         <BottomSection />
       </main>
       <Footer />

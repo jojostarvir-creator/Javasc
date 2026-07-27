@@ -1,12 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { FiArrowRight } from "react-icons/fi";
 import { useLang } from "@/context/LangContext";
 import { T, tr } from "@/data/translations";
 
 export default function About() {
   const { lang } = useLang();
+  const router = useRouter();
 
   const stats = [
     { value: "3+",   label: tr(T.about.years,    lang) },
@@ -49,7 +51,7 @@ export default function About() {
 
             <motion.button
               whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-              onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+              onClick={() => router.push("/contact")}
               className="flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold text-white"
               style={{ background: "#7b68ee" }}
             >

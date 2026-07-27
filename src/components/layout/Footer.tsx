@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter, usePathname } from "next/navigation";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 
@@ -9,7 +10,7 @@ const links = [
   { label: "À propos",  href: "#about"    },
   { label: "Skills",    href: "#skills"   },
   { label: "Projets",   href: "#projects" },
-  { label: "Contact",   href: "#contact"  },
+  { label: "Contact",   href: "/contact"  },
 ];
 
 const socials = [
@@ -20,9 +21,19 @@ const socials = [
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const router   = useRouter();
+  const pathname = usePathname();
 
   const go = (href: string) => {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      if (pathname === "/") {
+        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push(`/${href}`);
+      }
+    } else {
+      router.push(href);
+    }
   };
 
   return (

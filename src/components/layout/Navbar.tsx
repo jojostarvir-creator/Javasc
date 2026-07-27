@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter, usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTheme } from "next-themes";
 import { HiBars3, HiXMark } from "react-icons/hi2";
@@ -14,13 +15,15 @@ export default function Navbar() {
   const [mounted, setMounted]       = useState(false);
   const { theme, setTheme }         = useTheme();
   const { lang, toggle: toggleLang } = useLang();
+  const router   = useRouter();
+  const pathname = usePathname();
 
   const links = [
     { label: tr(T.nav.home,     lang), href: "#hero"     },
     { label: tr(T.nav.about,    lang), href: "#about"    },
     { label: tr(T.nav.skills,   lang), href: "#skills"   },
     { label: tr(T.nav.projects, lang), href: "#projects" },
-    { label: tr(T.nav.contact,  lang), href: "#contact"  },
+    { label: tr(T.nav.contact,  lang), href: "/contact"  },
   ];
 
   useEffect(() => { setMounted(true); }, []);
@@ -33,7 +36,15 @@ export default function Navbar() {
 
   const go = (href: string) => {
     setMobileOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    if (href.startsWith("#")) {
+      if (pathname === "/") {
+        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        router.push(`/${href}`);
+      }
+    } else {
+      router.push(href);
+    }
   };
 
   return (
@@ -91,7 +102,7 @@ export default function Navbar() {
             )}
             <motion.button
               whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.96 }}
-              onClick={() => go("#contact")}
+              onClick={() => go("/contact")}
               className="hidden sm:flex items-center gap-1.5 px-5 py-2 rounded-lg text-sm font-semibold text-white"
               style={{ background: "#7b68ee" }}
             >
@@ -121,7 +132,7 @@ export default function Navbar() {
                   {l.label}
                 </button>
               ))}
-              <button onClick={() => go("#contact")}
+              <button onClick={() => go("/contact")}
                 className="mt-2 py-3 rounded-xl text-sm font-semibold text-white text-center"
                 style={{ background: "#7b68ee" }}>
                 {tr(T.nav.hire, lang)}
