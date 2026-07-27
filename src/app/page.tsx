@@ -9,7 +9,6 @@ import Projects from "@/components/sections/Projects";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 
-const Testimonials  = dynamic(() => import("@/components/sections/Testimonials"));
 const GitHubStats   = dynamic(() => import("@/components/sections/GitHubStats"));
 const BottomSection = dynamic(() => import("@/components/sections/BottomSection"));
 
@@ -25,7 +24,6 @@ export default function Home() {
         <Skills />
         <Services />
         <Projects />
-        <Testimonials />
         <GitHubStats />
         <BottomSection />
       </main>

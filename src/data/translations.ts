@@ -53,12 +53,6 @@ export const T = {
     title:   { fr: "Mes",          en: "My"           },
     titleHL: { fr: "réalisations", en: "achievements" },
   },
-  testimonials: {
-    badge:   { fr: "Témoignages",       en: "Testimonials"        },
-    title:   { fr: "Ce que disent mes", en: "What my"             },
-    titleHL: { fr: "clients",           en: "clients say"         },
-    sub:     { fr: "La satisfaction client est ma priorité absolue.", en: "Client satisfaction is my absolute priority." },
-  },
   blog: {
     badge:    { fr: "Blog",           en: "Blog"         },
     title:    { fr: "Mes",            en: "My"           },
