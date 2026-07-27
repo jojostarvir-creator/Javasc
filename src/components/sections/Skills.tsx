@@ -6,18 +6,18 @@ import { useLang } from "@/context/LangContext";
 import { T, tr } from "@/data/translations";
 
 const skills = [
-  { name: "HTML5",      pct: 95, color: "#E34F26" },
-  { name: "CSS3",       pct: 90, color: "#1572B6" },
-  { name: "JavaScript", pct: 90, color: "#F7DF1E" },
-  { name: "TypeScript", pct: 85, color: "#3178C6" },
-  { name: "React",      pct: 85, color: "#61DAFB" },
-  { name: "Next.js",    pct: 80, color: "#ffffff"  },
-  { name: "Node.js",    pct: 80, color: "#339933" },
-  { name: "Tailwind",   pct: 90, color: "#06B6D4" },
-  { name: "Git",        pct: 85, color: "#F05032" },
-  { name: "Flutter",    pct: 70, color: "#54C5F8" },
-  { name: "MongoDB",    pct: 75, color: "#47A248" },
-  { name: "PostgreSQL", pct: 70, color: "#4169E1" },
+  { name: "HTML5",      pct: 50, color: "#E34F26" },
+  { name: "CSS3",       pct: 45, color: "#1572B6" },
+  { name: "JavaScript", pct: 45, color: "#F7DF1E" },
+  { name: "TypeScript", pct: 40, color: "#3178C6" },
+  { name: "React",      pct: 40, color: "#61DAFB" },
+  { name: "Next.js",    pct: 35, color: "#ffffff"  },
+  { name: "Node.js",    pct: 35, color: "#339933" },
+  { name: "Tailwind",   pct: 45, color: "#06B6D4" },
+  { name: "Git",        pct: 40, color: "#F05032" },
+  { name: "Flutter",    pct: 25, color: "#54C5F8" },
+  { name: "MongoDB",    pct: 30, color: "#47A248" },
+  { name: "PostgreSQL", pct: 25, color: "#4169E1" },
 ];
 
 const cols = [skills.slice(0, 4), skills.slice(4, 8), skills.slice(8, 12)];
