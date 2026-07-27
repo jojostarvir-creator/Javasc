@@ -17,11 +17,12 @@ export default function Projects() {
   const [preview, setPreview] = useState<Project | null>(null);
 
   const handleCardClick = (project: Project) => {
-    if (project.live && project.live !== "#") {
-      setPreview(project);
-    } else {
-      setSelected(project);
-    }
+    setSelected(project);
+  };
+
+  const handlePreviewClick = (e: React.MouseEvent, project: Project) => {
+    e.stopPropagation();
+    setPreview(project);
   };
 
   return (
@@ -70,13 +71,21 @@ export default function Projects() {
 
                 {/* Action icon */}
                 <div className="absolute top-4 right-4 z-10 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-7 h-7 rounded-lg flex items-center justify-center border border-white/20"
-                    style={{ background: "rgba(123,104,238,0.2)" }}>
-                    {project.live !== "#"
-                      ? <FiPlay className="w-3.5 h-3.5 text-[#7b68ee]" />
-                      : <FiMaximize2 className="w-3.5 h-3.5 text-[#7b68ee]" />
-                    }
-                  </div>
+                  {project.live !== "#" ? (
+                    <button
+                      onClick={(e) => handlePreviewClick(e, project)}
+                      title={lang === "fr" ? "Aperçu en direct" : "Live preview"}
+                      className="w-7 h-7 rounded-lg flex items-center justify-center border border-white/20 hover:border-[#7b68ee]/60 transition-colors"
+                      style={{ background: "rgba(123,104,238,0.2)" }}
+                    >
+                      <FiPlay className="w-3.5 h-3.5 text-[#7b68ee]" />
+                    </button>
+                  ) : (
+                    <div className="w-7 h-7 rounded-lg flex items-center justify-center border border-white/20"
+                      style={{ background: "rgba(123,104,238,0.2)" }}>
+                      <FiMaximize2 className="w-3.5 h-3.5 text-[#7b68ee]" />
+                    </div>
+                  )}
                 </div>
 
                 {/* Browser mockup */}

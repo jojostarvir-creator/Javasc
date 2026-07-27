@@ -121,6 +121,26 @@ export default function ProjectModal({ project, onClose }: Props) {
                   {tr(project.longDescription, lang)}
                 </p>
 
+                {/* Challenge / Outcome */}
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                  <div className="p-4 rounded-2xl border border-white/6" style={{ background: "rgba(255,255,255,0.02)" }}>
+                    <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-2">
+                      {lang === "fr" ? "Le défi" : "The challenge"}
+                    </p>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {tr(project.challenge, lang)}
+                    </p>
+                  </div>
+                  <div className="p-4 rounded-2xl border border-[#7b68ee]/15" style={{ background: "rgba(123,104,238,0.05)" }}>
+                    <p className="text-xs font-semibold text-[#7b68ee] uppercase tracking-widest mb-2">
+                      {lang === "fr" ? "Ce que ça démontre" : "What it demonstrates"}
+                    </p>
+                    <p className="text-slate-400 text-sm leading-relaxed">
+                      {tr(project.outcome, lang)}
+                    </p>
+                  </div>
+                </div>
+
                 {/* Stack */}
                 <div className="mb-6">
                   <p className="text-xs font-semibold text-slate-500 uppercase tracking-widest mb-3">

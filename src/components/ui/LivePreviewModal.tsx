@@ -177,7 +177,7 @@ export default function LivePreviewModal({ project, onClose }: Props) {
                 title={`Aperçu — ${project.title}`}
                 className="w-full h-full border-0"
                 onLoad={() => setLoading(false)}
-                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-navigation"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               />
             )}
           </div>
