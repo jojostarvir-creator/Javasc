@@ -51,12 +51,6 @@ const projects = [
     url: "muskhoundjo.vercel.app",
   },
   {
-    title: "Clean Food",
-    stack: "HTML5 · CSS3 · JavaScript",
-    desc: "Site vitrine pour un restaurant africain à Abidjan — menu, galerie, réservations et témoignages clients.",
-    url: "momoazahaf709-lab.github.io/Cleanfood",
-  },
-  {
     title: "Portfolio Laurent Fagnihoun",
     stack: "HTML5 · CSS3 · JavaScript",
     desc: "Portfolio professionnel développé pour un client développeur web — compétences, projets et contact.",

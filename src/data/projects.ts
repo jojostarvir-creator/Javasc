@@ -40,31 +40,6 @@ export const projects: Project[] = [
     year: "2025",
   },
   {
-    id: 2,
-    title: "Clean Food",
-    description: {
-      fr: "Site web pour un restaurant africain à Abidjan — menu, galerie, réservations et témoignages clients.",
-      en: "Website for an African restaurant in Abidjan — menu, gallery, reservations and customer reviews.",
-    },
-    longDescription: {
-      fr: "Clean Food est le site vitrine d'un restaurant africain basé à Abidjan, Côte d'Ivoire. Le site présente le menu complet avec les plats signatures (Poulet DG, jus Bissap…), une galerie visuelle de la cuisine et de l'ambiance, un système de réservation, les horaires d'ouverture et les témoignages de clients satisfaits.",
-      en: "Clean Food is the showcase website of an African restaurant based in Abidjan, Côte d'Ivoire. The site features the full menu with signature dishes (Chicken DG, Bissap juice…), a visual gallery of food and ambiance, a reservation system, opening hours, and customer reviews.",
-    },
-    image: "/projects/cleanfood.svg",
-    url: "momoazahaf709-lab.github.io/Cleanfood",
-    stack: ["HTML5", "CSS3", "JavaScript"],
-    features: [
-      { fr: "Menu interactif avec plats signatures", en: "Interactive menu with signature dishes" },
-      { fr: "Galerie photos cuisine & ambiance",     en: "Food & ambiance photo gallery"          },
-      { fr: "Système de réservation en ligne",       en: "Online reservation system"              },
-      { fr: "Témoignages clients",                   en: "Customer testimonials"                  },
-    ],
-    github: "https://github.com/momoazahaf709-lab/Cleanfood",
-    live: "https://momoazahaf709-lab.github.io/Cleanfood/",
-    category: "web",
-    year: "2024",
-  },
-  {
     id: 3,
     title: "Cocon Restaurant",
     description: {
