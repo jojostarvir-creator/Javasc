@@ -11,10 +11,10 @@ export default function About() {
   const router = useRouter();
 
   const stats = [
-    { value: "3+",   label: tr(T.about.years,    lang) },
-    { value: "10+",  label: tr(T.about.projects, lang) },
-    { value: "8+",   label: tr(T.about.clients,  lang) },
-    { value: "100%", label: tr(T.about.rate,     lang) },
+    { value: "8 mois",     label: tr(T.about.training,   lang) },
+    { value: "3",          label: tr(T.about.projects,   lang) },
+    { value: "2",          label: tr(T.about.hackathons, lang) },
+    { value: "✓",          label: tr(T.about.available,  lang) },
   ];
 
   return (
