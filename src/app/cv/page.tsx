@@ -8,60 +8,83 @@ import PrintButton from "./PrintButton";
 
 export const metadata: Metadata = {
   title: "CV — Donald Fambo | Développeur Web & Mobile",
-  description: "Curriculum Vitae de Donald Fambo, Développeur Web & Mobile Full Stack.",
+  description: "Curriculum Vitae de Donald Fambo, Développeur Web & Mobile.",
 };
 
-const skills = {
-  Frontend:  ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML5", "CSS3"],
-  Backend:   ["Node.js", "Express", "PHP", "Laravel", "REST API"],
-  Mobile:    ["Flutter", "React Native", "Dart"],
-  Database:  ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Supabase"],
-  DevOps:    ["Git", "GitHub", "Docker", "Vercel", "Netlify"],
+const LINKEDIN_URL = "https://www.linkedin.com/in/donald-dieudonn%C3%A9-fambo-sossa-4360843b2/";
+const LINKEDIN_LABEL = "linkedin.com/in/donald-dieudonné-fambo-sossa";
+const GITHUB_URL = "https://github.com/jojostarvir-creator";
+
+const skills = [
+  { category: "Front-End",           pct: 70, list: ["HTML5", "CSS3", "JavaScript"] },
+  { category: "Back-End",            pct: 60, list: ["PHP", "MySQL", "WordPress"] },
+  { category: "Déploiement & Outils",pct: 55, list: ["Git", "GitHub", "Hébergement"] },
+];
+
+const aiTools = [
+  { name: "Claude",  pct: 40 },
+  { name: "ChatGPT", pct: 35 },
+  { name: "Gemini",  pct: 30 },
+];
+
+const formation = {
+  title: "Formation Professionnelle en Développement Web",
+  school: "EIG Bénin",
+  period: "Depuis octobre 2025 — En cours",
+  workshops: [
+    { title: "Mindset du succès : apprendre à exceller", by: "Animé par Monyvedo Firmin Tovodounnon, Directeur Général de EIG Groupe" },
+    { title: "La Résilience : clé du succès dans la vie professionnelle", by: "Animé par Fredy Vlavonou, PDG de l'École de l'Imprimerie et de la Menuiserie Fred Sympoz" },
+    { title: "L'appartenance communautaire : levier de réussite professionnelle", by: "Animé par Casmir C. Aitchedji, Formateur, consultant, conseiller & coach" },
+  ],
 };
 
 const experiences = [
   {
-    role: "Développeur Full Stack Freelance",
-    company: "Auto-entrepreneur",
-    period: "2022 — Présent",
+    role: "Participant — Mondallas Events",
+    company: "Cotonou",
+    period: "Janvier 2026",
     tasks: [
-      "Développement d'applications web & mobiles sur mesure pour des clients en Afrique et à l'international.",
-      "Conception d'interfaces modernes avec React / Next.js et intégration de backends Node.js.",
-      "Développement d'applications mobiles cross-platform avec Flutter.",
-      "Livraison de 10+ projets avec un taux de satisfaction de 100 %.",
+      "Conception et développement d'une application web en équipe, sous forte contrainte de temps.",
+      "Réalisation des interfaces responsives (HTML5, CSS3, JavaScript) et intégration des fonctionnalités clés.",
+      "Collaboration via Git/GitHub : répartition des tâches, versioning et revue de code.",
     ],
   },
   {
-    role: "Développeur Web",
-    company: "Projets personnels & académiques",
-    period: "2021 — 2022",
+    role: "Participant — Akili",
+    company: "Cotonou",
+    period: "Mars 2026",
     tasks: [
-      "Création de sites vitrines et d'applications web pour des entreprises locales.",
-      "Maîtrise des fondamentaux HTML, CSS, JavaScript et des frameworks modernes.",
-      "Développement du projet Akili (application React) et d'un site e-commerce décoration.",
+      "Développement d'une solution digitale répondant à une problématique locale, de l'idée au prototype fonctionnel.",
+      "Mise en place du back-end (PHP, MySQL) et connexion aux interfaces front-end.",
+      "Déploiement et hébergement du prototype pour la démonstration finale.",
     ],
   },
 ];
 
 const projects = [
   {
-    title: "Houndjo",
-    stack: "Next.js · React · JavaScript",
-    desc: "E-commerce de parfums, muscs et huiles parfumées fabriqués au Bénin. Catalogue produits, galerie et contact.",
-    url: "muskhoundjo.vercel.app",
+    title: "Cocon Restaurant",
+    stack: "HTML5 · CSS3 · JavaScript",
+    desc: "Site vitrine responsive pour un restaurant : présentation du menu, galerie photos et formulaire de réservation.",
   },
   {
-    title: "Portfolio Laurent Fagnihoun",
+    title: "Parfums Musk",
+    stack: "Next.js · React · JavaScript",
+    desc: "Boutique vitrine élégante pour une marque de parfums : catalogue produits, fiches détaillées et page de contact.",
+  },
+  {
+    title: "Portfolio personnel",
     stack: "HTML5 · CSS3 · JavaScript",
-    desc: "Portfolio professionnel développé pour un client développeur web — compétences, projets et contact.",
-    url: "momoazahaf709-lab.github.io/toutnouveau",
+    desc: "Portfolio en ligne présentant mes projets et compétences. Utilisation d'outils d'IA (ChatGPT, Claude, Gemini) pour accélérer le développement, le débogage et la rédaction de contenu.",
   },
 ];
 
 const langues = [
-  { lang: "Français", level: "Courant", pct: 95 },
-  { lang: "Anglais",  level: "Intermédiaire", pct: 60 },
+  { lang: "Français", level: "Courant" },
+  { lang: "Fon",       level: "Courant" },
 ];
+
+const centresInteret = ["Football", "Jeux vidéo"];
 
 export default function CVPage() {
   return (
@@ -89,16 +112,20 @@ export default function CVPage() {
 
             {/* Info */}
             <div className="flex-1 text-center sm:text-left">
-              <h1 className="text-3xl font-black text-white tracking-tight mb-1">Donald Fambo</h1>
+              <h1 className="text-3xl font-black text-white tracking-tight mb-1">Donald Dieudonné Sossa Fambo</h1>
               <p className="text-indigo-300 font-semibold text-lg mb-4">
-                Développeur Web & Mobile Full Stack
+                Développeur Web & Mobile
               </p>
               <div className="flex flex-wrap justify-center sm:justify-start gap-x-5 gap-y-2 text-sm text-indigo-200">
                 <span className="flex items-center gap-1.5"><FiMail className="w-3.5 h-3.5" />fambodonald110@gmail.com</span>
                 <span className="flex items-center gap-1.5"><FiPhone className="w-3.5 h-3.5" />+229 01 56 33 62 82</span>
-                <span className="flex items-center gap-1.5"><FiMapPin className="w-3.5 h-3.5" />Bénin, Afrique de l&apos;Ouest</span>
-                <span className="flex items-center gap-1.5"><FiGithub className="w-3.5 h-3.5" />github.com/jojostarvir-creator</span>
-                <span className="flex items-center gap-1.5"><FiLinkedin className="w-3.5 h-3.5" />linkedin.com/in/donald-fambo</span>
+                <span className="flex items-center gap-1.5"><FiMapPin className="w-3.5 h-3.5" />Cotonou, Bénin</span>
+                <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                  <FiGithub className="w-3.5 h-3.5" />github.com/jojostarvir-creator
+                </a>
+                <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1.5 hover:text-white transition-colors">
+                  <FiLinkedin className="w-3.5 h-3.5" />{LINKEDIN_LABEL}
+                </a>
               </div>
             </div>
 
@@ -119,9 +146,11 @@ export default function CVPage() {
               <div>
                 <SectionHead>Profil</SectionHead>
                 <p className="text-slate-600 text-xs leading-relaxed">
-                  Développeur Web & Mobile passionné avec plus de 3 ans d&apos;expérience.
-                  Je crée des applications modernes, performantes et évolutives, de la conception
-                  jusqu&apos;au déploiement. Orienté résultats, rigoureux et toujours en veille technologique.
+                  Développeur web et mobile passionné par la création d&apos;expériences numériques
+                  modernes et performantes. Formé au développement d&apos;applications web responsives
+                  et intuitives, je maîtrise les technologies front-end et back-end essentielles et je
+                  renforce mes compétences sur le terrain à travers des hackathons et des projets concrets.
+                  Curieux, rigoureux et orienté résultats.
                 </p>
               </div>
 
@@ -129,9 +158,15 @@ export default function CVPage() {
               <div>
                 <SectionHead>Compétences</SectionHead>
                 <div className="space-y-4">
-                  {Object.entries(skills).map(([cat, list]) => (
-                    <div key={cat}>
-                      <p className="text-[10px] font-bold text-indigo-600 uppercase tracking-widest mb-1.5">{cat}</p>
+                  {skills.map(({ category, pct, list }) => (
+                    <div key={category}>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="font-semibold text-slate-700">{category}</span>
+                        <span className="text-slate-400">{pct}%</span>
+                      </div>
+                      <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden mb-1.5">
+                        <div className="h-full rounded-full" style={{ width: `${pct}%`, background: "linear-gradient(90deg,#6366f1,#8b5cf6)" }} />
+                      </div>
                       <div className="flex flex-wrap gap-1.5">
                         {list.map((s) => (
                           <span key={s} className="px-2 py-0.5 text-[10px] font-medium bg-indigo-50 text-indigo-700 rounded border border-indigo-100">
@@ -144,15 +179,15 @@ export default function CVPage() {
                 </div>
               </div>
 
-              {/* Langues */}
+              {/* Outils IA */}
               <div>
-                <SectionHead>Langues</SectionHead>
+                <SectionHead>Maîtrise des outils IA</SectionHead>
                 <div className="space-y-3">
-                  {langues.map(({ lang, level, pct }) => (
-                    <div key={lang}>
+                  {aiTools.map(({ name, pct }) => (
+                    <div key={name}>
                       <div className="flex justify-between text-xs mb-1">
-                        <span className="font-semibold text-slate-700">{lang}</span>
-                        <span className="text-slate-400">{level}</span>
+                        <span className="font-semibold text-slate-700">{name}</span>
+                        <span className="text-slate-400">{pct}%</span>
                       </div>
                       <div className="h-1.5 bg-slate-200 rounded-full overflow-hidden">
                         <div className="h-full rounded-full" style={{ width: `${pct}%`, background: "linear-gradient(90deg,#6366f1,#8b5cf6)" }} />
@@ -160,6 +195,19 @@ export default function CVPage() {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              {/* Langues */}
+              <div>
+                <SectionHead>Langues</SectionHead>
+                <ul className="space-y-1.5">
+                  {langues.map(({ lang, level }) => (
+                    <li key={lang} className="flex justify-between text-xs">
+                      <span className="font-semibold text-slate-700">{lang}</span>
+                      <span className="text-slate-400">{level}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Qualités */}
@@ -175,6 +223,18 @@ export default function CVPage() {
                 </ul>
               </div>
 
+              {/* Centres d'intérêt */}
+              <div>
+                <SectionHead>Centres d&apos;intérêt</SectionHead>
+                <div className="flex flex-wrap gap-1.5">
+                  {centresInteret.map((c) => (
+                    <span key={c} className="px-2.5 py-1 text-[10px] font-medium bg-slate-100 text-slate-600 rounded-full border border-slate-200">
+                      {c}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               {/* Contact */}
               <div>
                 <SectionHead>Contact</SectionHead>
@@ -182,7 +242,7 @@ export default function CVPage() {
                   {[
                     { icon: FiMail,   val: "fambodonald110@gmail.com" },
                     { icon: FiPhone,  val: "+229 01 56 33 62 82" },
-                    { icon: FiMapPin, val: "Bénin, Afrique de l'Ouest" },
+                    { icon: FiMapPin, val: "Cotonou, Bénin" },
                     { icon: FiGlobe,  val: "donald-fambo.vercel.app" },
                   ].map(({ icon: Icon, val }) => (
                     <li key={val} className="flex items-start gap-2 text-xs text-slate-600">
@@ -199,7 +259,7 @@ export default function CVPage() {
 
               {/* Expérience */}
               <div>
-                <SectionHead accent>Expérience professionnelle</SectionHead>
+                <SectionHead accent>Expériences professionnelles</SectionHead>
                 <div className="space-y-6">
                   {experiences.map((exp) => (
                     <div key={exp.role} className="relative pl-4 border-l-2 border-indigo-100">
@@ -226,9 +286,37 @@ export default function CVPage() {
                 </div>
               </div>
 
+              {/* Formation */}
+              <div>
+                <SectionHead accent>Formation</SectionHead>
+                <div className="relative pl-4 border-l-2 border-indigo-100">
+                  <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-indigo-500" />
+                  <div className="flex flex-wrap items-start justify-between gap-1 mb-1">
+                    <div>
+                      <h3 className="text-sm font-bold text-slate-900">{formation.title}</h3>
+                      <p className="text-indigo-600 text-xs font-semibold">{formation.school}</p>
+                    </div>
+                    <span className="flex items-center gap-1 text-[10px] text-slate-400 font-medium bg-slate-100 px-2.5 py-1 rounded-full">
+                      <FiCalendar className="w-3 h-3" />{formation.period}
+                    </span>
+                  </div>
+                  <ul className="mt-3 space-y-2.5">
+                    {formation.workshops.map((w) => (
+                      <li key={w.title} className="text-xs text-slate-600">
+                        <p className="flex items-start gap-2">
+                          <span className="text-indigo-400 mt-0.5 flex-shrink-0">▸</span>
+                          <span><span className="italic text-slate-700">« {w.title} »</span></span>
+                        </p>
+                        <p className="pl-4 text-[11px] text-slate-400 mt-0.5">{w.by}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
               {/* Projets */}
               <div>
-                <SectionHead accent>Projets réalisés</SectionHead>
+                <SectionHead accent>Projets</SectionHead>
                 <div className="space-y-4">
                   {projects.map((p) => (
                     <div key={p.title} className="p-4 bg-slate-50 rounded-xl border border-slate-100">
@@ -238,56 +326,13 @@ export default function CVPage() {
                           {p.stack}
                         </span>
                       </div>
+                      <p className="text-[10px] font-semibold text-amber-600 uppercase tracking-wide mb-1.5">
+                        Projet fictif — réalisé à titre d&apos;exercice
+                      </p>
                       <p className="text-xs text-slate-500 leading-relaxed">{p.desc}</p>
-                      {p.url && (
-                        <p className="text-[10px] text-indigo-400 mt-1">{p.url}</p>
-                      )}
                     </div>
                   ))}
                 </div>
-              </div>
-
-              {/* Formation */}
-              <div>
-                <SectionHead accent>Formation</SectionHead>
-                <div className="relative pl-4 border-l-2 border-indigo-100">
-                  <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-indigo-500" />
-                  <div className="flex flex-wrap items-start justify-between gap-1 mb-1">
-                    <div>
-                      <h3 className="text-sm font-bold text-slate-900">Développement Web & Mobile</h3>
-                      <p className="text-indigo-600 text-xs font-semibold">Formation autodidacte & en ligne</p>
-                    </div>
-                    <span className="flex items-center gap-1 text-[10px] text-slate-400 font-medium bg-slate-100 px-2.5 py-1 rounded-full">
-                      <FiCalendar className="w-3 h-3" />2021 — Présent
-                    </span>
-                  </div>
-                  <ul className="mt-2 space-y-1">
-                    {[
-                      "Formations certifiantes sur Udemy, freeCodeCamp et The Odin Project",
-                      "Pratique intensive sur des projets réels pour des clients",
-                      "Veille technologique continue sur les dernières technologies web & mobile",
-                    ].map((t) => (
-                      <li key={t} className="flex items-start gap-2 text-xs text-slate-600">
-                        <span className="text-indigo-400 mt-0.5 flex-shrink-0">▸</span>
-                        {t}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-3 pt-2">
-                {[
-                  { val: "10+", label: "Projets livrés" },
-                  { val: "3+",  label: "Ans d'expérience" },
-                  { val: "100%", label: "Satisfaction client" },
-                ].map(({ val, label }) => (
-                  <div key={label} className="text-center p-3 rounded-xl border border-slate-100 bg-slate-50">
-                    <div className="text-xl font-black text-indigo-600 mb-0.5">{val}</div>
-                    <div className="text-[10px] text-slate-500 font-medium">{label}</div>
-                  </div>
-                ))}
               </div>
 
             </div>
@@ -296,7 +341,7 @@ export default function CVPage() {
           {/* Footer */}
           <div className="px-10 py-4 border-t border-slate-100 flex items-center justify-between"
             style={{ background: "linear-gradient(135deg, #1e1b4b 0%, #312e81 100%)" }}>
-            <span className="text-indigo-300 text-xs">Donald Fambo — Développeur Web & Mobile Full Stack</span>
+            <span className="text-indigo-300 text-xs">Donald Fambo — Développeur Web & Mobile</span>
             <span className="text-indigo-400 text-xs">fambodonald110@gmail.com · +229 01 56 33 62 82</span>
           </div>
 
